@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Plus, Heart } from "lucide-react";
 
 export default function AdminPage() {
@@ -21,8 +22,14 @@ export default function AdminPage() {
               <ArrowLeft className="w-5 h-5" />
               <span>Volver al inicio</span>
             </Link>
-            <div className="flex items-center gap-2">
-              <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
+            <div className="flex items-center gap-3">
+              <Image 
+                src="/logo.png" 
+                alt="Estudio Nomade" 
+                width={28} 
+                height={28}
+                className="object-contain"
+              />
               <span className="text-xl font-bold font-serif">Panel de Administración</span>
             </div>
           </div>

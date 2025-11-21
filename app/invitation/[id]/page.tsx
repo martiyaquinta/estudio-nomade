@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Heart, Calendar, MapPin, Users, Image as ImageIcon, Gift, Music } from "lucide-react";
 
 export default function InvitationPage({ params }: { params: { id: string } }) {
@@ -239,9 +240,15 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <Heart className="w-6 h-6 mx-auto mb-2 text-pink-500 fill-pink-500" />
+          <Image 
+            src="/logo.png" 
+            alt="Estudio Nomade" 
+            width={32} 
+            height={32}
+            className="mx-auto mb-2 object-contain"
+          />
           <p className="text-gray-400 text-sm">
-            Creado con ❤️ en Invitaciones Digitales
+            Creado con ❤️ por Estudio Nomade
           </p>
         </div>
       </footer>

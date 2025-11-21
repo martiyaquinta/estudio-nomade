@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Heart, Calendar, Users, Image, MapPin, Gift } from "lucide-react";
+import Image from "next/image";
+import { Calendar, Users, Image as ImageIcon, MapPin, Gift } from "lucide-react";
 
 export default function Home() {
   return (
@@ -7,9 +8,15 @@ export default function Home() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Heart className="w-8 h-8 text-pink-500 fill-pink-500" />
-            <span className="text-2xl font-bold font-serif text-gray-800">Invitaciones Digitales</span>
+          <div className="flex items-center gap-3">
+            <Image 
+              src="/logo.png" 
+              alt="Estudio Nomade" 
+              width={40} 
+              height={40}
+              className="object-contain"
+            />
+            <span className="text-2xl font-bold font-serif text-gray-800">Estudio Nomade</span>
           </div>
           <div className="hidden md:flex gap-6">
             <Link href="#templates" className="text-gray-600 hover:text-pink-500 transition">Plantillas</Link>
@@ -60,7 +67,7 @@ export default function Home() {
             description="Confirma asistencia fácilmente y gestiona tu lista de invitados"
           />
           <FeatureCard
-            icon={<Image className="w-12 h-12 text-pink-500" />}
+            icon={<ImageIcon className="w-12 h-12 text-pink-500" />}
             title="Galería de Fotos"
             description="Comparte momentos especiales con una hermosa galería"
           />
@@ -75,7 +82,13 @@ export default function Home() {
             description="Comparte información de regalos y deseos de forma elegante"
           />
           <FeatureCard
-            icon={<Heart className="w-12 h-12 text-pink-500" />}
+            icon={<Image 
+              src="/logo.png" 
+              alt="Estudio Nomade" 
+              width={48} 
+              height={48}
+              className="object-contain"
+            />}
             title="Diseños Personalizados"
             description="Plantillas elegantes totalmente personalizables a tu estilo"
           />
@@ -129,12 +142,18 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Heart className="w-6 h-6 text-pink-500 fill-pink-500" />
-            <span className="text-xl font-serif font-bold">Invitaciones Digitales</span>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Image 
+              src="/logo.png" 
+              alt="Estudio Nomade" 
+              width={32} 
+              height={32}
+              className="object-contain"
+            />
+            <span className="text-xl font-serif font-bold">Estudio Nomade</span>
           </div>
           <p className="text-gray-400">
-            © 2025 Invitaciones Digitales. Todos los derechos reservados.
+            © 2025 Estudio Nomade. Todos los derechos reservados.
           </p>
         </div>
       </footer>
@@ -157,7 +176,13 @@ function TemplateCard({ title, category, color }: { title: string; category: str
     <div className="group cursor-pointer">
       <div className={`${color} h-80 rounded-2xl shadow-lg group-hover:shadow-2xl transition-shadow flex items-center justify-center mb-4`}>
         <div className="text-center">
-          <Heart className="w-16 h-16 mx-auto mb-4 text-gray-700 opacity-20" />
+          <Image 
+            src="/logo.png" 
+            alt="Estudio Nomade" 
+            width={64} 
+            height={64}
+            className="mx-auto mb-4 opacity-20 object-contain"
+          />
           <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">{category}</p>
         </div>
       </div>
