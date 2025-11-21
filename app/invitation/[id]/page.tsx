@@ -45,17 +45,17 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
   }, [invitation.date]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-100/50 to-purple-100/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-purple-100/50" />
         <div className="relative text-center max-w-4xl mx-auto">
-          <Heart className="w-16 h-16 mx-auto mb-6 text-pink-500 fill-pink-500 animate-pulse" />
+          <Heart className="w-16 h-16 mx-auto mb-6 text-violet-500 fill-violet-500 animate-pulse" />
           <p className="text-sm text-gray-600 uppercase tracking-widest mb-4">{invitation.eventType}</p>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-800 mb-6">
             {invitation.title}
           </h1>
-          <h2 className="text-4xl md:text-5xl font-serif text-pink-600 mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif text-violet-700 mb-8">
             {invitation.names}
           </h2>
           <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto mb-12">
@@ -64,7 +64,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
           
           {/* Date */}
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl max-w-md mx-auto">
-            <Calendar className="w-8 h-8 mx-auto mb-4 text-pink-500" />
+            <Calendar className="w-8 h-8 mx-auto mb-4 text-violet-500" />
             <p className="text-2xl font-serif font-bold text-gray-800 mb-2">
               {new Date(invitation.date).toLocaleDateString('es-ES', { 
                 weekday: 'long', 
@@ -101,14 +101,14 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Ceremony */}
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-              <Heart className="w-12 h-12 mx-auto mb-4 text-pink-500" />
+              <Heart className="w-12 h-12 mx-auto mb-4 text-violet-500" />
               <h3 className="text-2xl font-serif font-bold mb-2">Ceremonia</h3>
               <p className="text-lg text-gray-600 mb-4">{invitation.ceremonyTime} hrs</p>
               <div className="space-y-2">
                 <p className="font-semibold text-gray-800">{invitation.location}</p>
                 <p className="text-sm text-gray-600">{invitation.address}</p>
               </div>
-              <button className="mt-6 bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition flex items-center gap-2 mx-auto">
+              <button className="mt-6 bg-violet-600 text-white px-6 py-3 rounded-full hover:bg-violet-700 transition flex items-center gap-2 mx-auto">
                 <MapPin className="w-4 h-4" />
                 Ver Ubicación
               </button>
@@ -134,7 +134,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
 
       {/* RSVP */}
       {invitation.rsvpEnabled && (
-        <section className="py-20 bg-gradient-to-r from-pink-500 to-purple-600">
+        <section className="py-20 bg-gradient-to-r from-purple-500 to-purple-600">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center text-white">
               <Users className="w-16 h-16 mx-auto mb-6" />
@@ -144,7 +144,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
               </p>
               <button
                 onClick={() => setShowRSVP(!showRSVP)}
-                className="bg-white text-pink-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition shadow-lg"
+                className="bg-white text-violet-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition shadow-lg"
               >
                 Confirmar Ahora
               </button>
@@ -179,7 +179,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-600 transition"
+                      className="w-full bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-violet-700 transition"
                     >
                       Enviar Confirmación
                     </button>
@@ -196,7 +196,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <ImageIcon className="w-12 h-12 mx-auto mb-4 text-pink-500" />
+              <ImageIcon className="w-12 h-12 mx-auto mb-4 text-violet-500" />
               <h3 className="text-4xl font-serif font-bold text-gray-800 mb-4">Galería</h3>
               <p className="text-lg text-gray-600">Momentos especiales</p>
             </div>
@@ -204,7 +204,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="aspect-square bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition"
+                  className="aspect-square bg-gradient-to-br from-purple-100 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition"
                 />
               ))}
             </div>
@@ -216,7 +216,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <Gift className="w-12 h-12 mx-auto mb-4 text-pink-500" />
+            <Gift className="w-12 h-12 mx-auto mb-4 text-violet-500" />
             <h3 className="text-3xl font-serif font-bold text-gray-800 mb-4">Mesa de Regalos</h3>
             <p className="text-lg text-gray-600 mb-8">
               Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo más, 
@@ -258,7 +258,7 @@ export default function InvitationPage({ params }: { params: { id: string } }) {
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-6 shadow-lg">
+    <div className="bg-gradient-to-br from-purple-100 to-purple-100 rounded-2xl p-6 shadow-lg">
       <div className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
         {value.toString().padStart(2, '0')}
       </div>

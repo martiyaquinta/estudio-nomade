@@ -4,10 +4,10 @@ import { ArrowLeft, Plus, Heart } from "lucide-react";
 
 export default function AdminPage() {
   const templates = [
-    { id: 1, name: "Boda Elegante", category: "Bodas", color: "from-pink-100 to-purple-100" },
-    { id: 2, name: "XV Años Princesa", category: "XV Años", color: "from-purple-100 to-pink-100" },
+    { id: 1, name: "Boda Elegante", category: "Bodas", color: "from-purple-100 to-purple-100" },
+    { id: 2, name: "XV Años Princesa", category: "XV Años", color: "from-purple-100 to-violet-100" },
     { id: 3, name: "Cumpleaños Infantil", category: "Cumpleaños", color: "from-blue-100 to-cyan-100" },
-    { id: 4, name: "Baby Shower", category: "Baby Shower", color: "from-yellow-100 to-pink-100" },
+    { id: 4, name: "Baby Shower", category: "Baby Shower", color: "from-yellow-100 to-violet-100" },
     { id: 5, name: "Bautizo Tradicional", category: "Bautizo", color: "from-blue-50 to-blue-100" },
     { id: 6, name: "Evento Corporativo", category: "Corporativo", color: "from-gray-100 to-blue-100" },
   ];
@@ -64,7 +64,7 @@ export default function AdminPage() {
                   <h3 className="text-2xl font-serif font-bold text-gray-800 mb-4">
                     {template.name}
                   </h3>
-                  <div className="bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full inline-flex items-center gap-2 text-pink-600 font-semibold">
+                  <div className="bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full inline-flex items-center gap-2 text-violet-700 font-semibold">
                     <Plus className="w-4 h-4" />
                     Usar Plantilla
                   </div>
@@ -76,14 +76,14 @@ export default function AdminPage() {
 
         {/* Custom Template Option */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-12 text-white text-center">
+          <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl p-12 text-white text-center">
             <h2 className="text-3xl font-serif font-bold mb-4">
               ¿Necesitas algo personalizado?
             </h2>
             <p className="text-lg mb-6 opacity-90">
               Contáctanos para crear una invitación completamente única
             </p>
-            <button className="bg-white text-pink-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+            <button className="bg-white text-violet-500 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
               Contactar
             </button>
           </div>

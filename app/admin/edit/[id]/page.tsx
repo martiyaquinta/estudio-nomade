@@ -46,7 +46,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                 <Eye className="w-4 h-4" />
                 Vista Previa
               </Link>
-              <button className="flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition">
+              <button className="flex items-center gap-2 px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition">
                 <Save className="w-4 h-4" />
                 Guardar
               </button>
@@ -71,7 +71,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     name="eventType"
                     value={formData.eventType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                   >
                     <option>Boda</option>
                     <option>XV Años</option>
@@ -91,7 +91,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     name="title"
                     value={formData.title}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Ej: Nuestra Boda"
                   />
                 </div>
@@ -105,7 +105,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     name="names"
                     value={formData.names}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Ej: Ana & Carlos"
                   />
                 </div>
@@ -120,7 +120,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                       name="date"
                       value={formData.date}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -132,7 +132,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                       name="time"
                       value={formData.time}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Nombre del lugar"
                   />
                 </div>
@@ -160,7 +160,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Dirección completa"
                   />
                 </div>
@@ -174,7 +174,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent"
                     placeholder="Mensaje de bienvenida para tus invitados"
                   />
                 </div>
@@ -186,7 +186,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                       name="countdownEnabled"
                       checked={formData.countdownEnabled}
                       onChange={handleInputChange}
-                      className="w-5 h-5 text-pink-500 rounded focus:ring-pink-500"
+                      className="w-5 h-5 text-violet-500 rounded focus:ring-violet-500"
                     />
                     <span className="text-sm font-medium text-gray-700">Activar cuenta regresiva</span>
                   </label>
@@ -196,7 +196,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                       name="rsvpEnabled"
                       checked={formData.rsvpEnabled}
                       onChange={handleInputChange}
-                      className="w-5 h-5 text-pink-500 rounded focus:ring-pink-500"
+                      className="w-5 h-5 text-violet-500 rounded focus:ring-violet-500"
                     />
                     <span className="text-sm font-medium text-gray-700">Habilitar confirmación de asistencia</span>
                   </label>
@@ -206,7 +206,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                       name="galleryEnabled"
                       checked={formData.galleryEnabled}
                       onChange={handleInputChange}
-                      className="w-5 h-5 text-pink-500 rounded focus:ring-pink-500"
+                      className="w-5 h-5 text-violet-500 rounded focus:ring-violet-500"
                     />
                     <span className="text-sm font-medium text-gray-700">Incluir galería de fotos</span>
                   </label>
@@ -234,11 +234,11 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
           <div className="lg:sticky lg:top-24 h-fit">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">Vista Previa</h3>
-              <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg p-8 min-h-[600px] flex flex-col items-center justify-center text-center">
+              <div className="bg-gradient-to-br from-purple-100 to-purple-100 rounded-lg p-8 min-h-[600px] flex flex-col items-center justify-center text-center">
                 <div className="space-y-6">
                   <p className="text-sm text-gray-600 uppercase tracking-wide">{formData.eventType}</p>
                   <h1 className="text-4xl font-serif font-bold text-gray-800">{formData.title}</h1>
-                  <h2 className="text-3xl font-serif text-pink-600">{formData.names}</h2>
+                  <h2 className="text-3xl font-serif text-violet-700">{formData.names}</h2>
                   <p className="text-gray-700 max-w-md">{formData.message}</p>
                   <div className="space-y-2">
                     <p className="text-lg font-semibold text-gray-800">
@@ -256,7 +256,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
                     <p className="text-sm text-gray-600">{formData.address}</p>
                   </div>
                   {formData.rsvpEnabled && (
-                    <button className="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition">
+                    <button className="bg-violet-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-violet-700 transition">
                       Confirmar Asistencia
                     </button>
                   )}

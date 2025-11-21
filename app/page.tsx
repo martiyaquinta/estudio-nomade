@@ -4,7 +4,7 @@ import { Calendar, Users, Image as ImageIcon, MapPin, Gift } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -19,10 +19,10 @@ export default function Home() {
             <span className="text-2xl font-bold font-serif text-gray-800">Estudio Nomade</span>
           </div>
           <div className="hidden md:flex gap-6">
-            <Link href="#templates" className="text-gray-600 hover:text-pink-500 transition">Plantillas</Link>
-            <Link href="#features" className="text-gray-600 hover:text-pink-500 transition">Características</Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-pink-500 transition">Precios</Link>
-            <Link href="/admin" className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition">
+            <Link href="#templates" className="text-gray-600 hover:text-violet-500 transition">Plantillas</Link>
+            <Link href="#features" className="text-gray-600 hover:text-violet-500 transition">Características</Link>
+            <Link href="#pricing" className="text-gray-600 hover:text-violet-500 transition">Precios</Link>
+            <Link href="/admin" className="bg-violet-600 text-white px-4 py-2 rounded-full hover:bg-violet-700 transition">
               Crear Invitación
             </Link>
           </div>
@@ -34,17 +34,17 @@ export default function Home() {
         <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-800 mb-6">
           Invitaciones Digitales
           <br />
-          <span className="text-pink-500">Únicas y Memorables</span>
+          <span className="text-violet-500">Únicas y Memorables</span>
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           Crea invitaciones personalizadas para bodas, cumpleaños, eventos especiales y más.
           Comparte fácilmente y gestiona confirmaciones de asistencia.
         </p>
         <div className="flex gap-4 justify-center">
-          <Link href="/admin" className="bg-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-pink-600 transition shadow-lg">
+          <Link href="/admin" className="bg-violet-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-violet-700 transition shadow-lg">
             Comenzar Gratis
           </Link>
-          <Link href="#templates" className="bg-white text-pink-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition shadow-lg border-2 border-pink-500">
+          <Link href="#templates" className="bg-white text-violet-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition shadow-lg border-2 border-violet-500">
             Ver Plantillas
           </Link>
         </div>
@@ -57,27 +57,27 @@ export default function Home() {
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<Calendar className="w-12 h-12 text-pink-500" />}
+            icon={<Calendar className="w-12 h-12 text-violet-500" />}
             title="Cuenta Regresiva"
             description="Cuenta regresiva en tiempo real para mantener a tus invitados emocionados"
           />
           <FeatureCard
-            icon={<Users className="w-12 h-12 text-pink-500" />}
+            icon={<Users className="w-12 h-12 text-violet-500" />}
             title="Gestión de RSVP"
             description="Confirma asistencia fácilmente y gestiona tu lista de invitados"
           />
           <FeatureCard
-            icon={<ImageIcon className="w-12 h-12 text-pink-500" />}
+            icon={<ImageIcon className="w-12 h-12 text-violet-500" />}
             title="Galería de Fotos"
             description="Comparte momentos especiales con una hermosa galería"
           />
           <FeatureCard
-            icon={<MapPin className="w-12 h-12 text-pink-500" />}
+            icon={<MapPin className="w-12 h-12 text-violet-500" />}
             title="Ubicación del Evento"
             description="Integración con mapas para que todos lleguen sin problemas"
           />
           <FeatureCard
-            icon={<Gift className="w-12 h-12 text-pink-500" />}
+            icon={<Gift className="w-12 h-12 text-violet-500" />}
             title="Mesa de Regalos"
             description="Comparte información de regalos y deseos de forma elegante"
           />
@@ -108,7 +108,7 @@ export default function Home() {
             <TemplateCard
               title="Elegancia Clásica"
               category="Bodas"
-              color="bg-gradient-to-br from-pink-100 to-purple-100"
+              color="bg-gradient-to-br from-purple-100 to-purple-100"
             />
             <TemplateCard
               title="Celebración Moderna"
@@ -126,14 +126,14 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-12 text-white">
+        <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-3xl p-12 text-white">
           <h2 className="text-4xl font-serif font-bold mb-4">
             ¿Listo para crear tu invitación?
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Únete a miles de personas que han creado invitaciones memorables
           </p>
-          <Link href="/admin" className="bg-white text-pink-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition inline-block shadow-lg">
+          <Link href="/admin" className="bg-white text-violet-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition inline-block shadow-lg">
             Empezar Ahora
           </Link>
         </div>
