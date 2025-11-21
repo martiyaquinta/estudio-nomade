@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Image from "next/image";
 import { Heart, Calendar, MapPin, Users, Image as ImageIcon, Gift, Music } from "lucide-react";
 
-export default function InvitationPage({ params }: { params: { id: string } }) {
+export default function InvitationPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [showRSVP, setShowRSVP] = useState(false);
 

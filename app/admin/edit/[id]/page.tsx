@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Link from "next/link";
 import { ArrowLeft, Save, Eye, Share2, Download } from "lucide-react";
 
-export default function EditInvitationPage({ params }: { params: { id: string } }) {
+export default function EditInvitationPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const [formData, setFormData] = useState({
     eventType: "Boda",
     title: "Nuestra Boda",
@@ -39,7 +40,7 @@ export default function EditInvitationPage({ params }: { params: { id: string } 
             </Link>
             <div className="flex gap-3">
               <Link
-                href={`/invitation/${params.id}`}
+                href={`/invitation/${id}`}
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
               >
