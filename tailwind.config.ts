@@ -11,10 +11,27 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // Paleta ESTUDIO NÓMADE
+        lavanda: {
+          DEFAULT: '#AEB2E4',
+          light: '#C9CCF0',
+          dark: '#8B90D1',
+        },
+        violeta: {
+          DEFAULT: '#DAABE4',
+          light: '#E8C9F0',
+          dark: '#C98CD1',
+        },
+        humo: '#F8F8F8',
+        oscuro: '#1E1E1E',
       },
       fontFamily: {
         serif: ['Georgia', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'Inter', 'sans-serif'],
+        display: ['var(--font-poppins)', 'sans-serif'],
+        // Placeholders para fuentes personalizadas
+        blanka: ['Blanka', 'sans-serif'],
+        tek: ['Tek Tall Arabic Condensed', 'sans-serif'],
       },
     },
   },

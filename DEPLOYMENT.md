@@ -1,203 +1,197 @@
-# 🚀 Guía de Despliegue en Vercel
+# 🚀 ESTUDIO NÓMADE - Sitio Web Completo
 
-## Método 1: Despliegue desde GitHub (Recomendado)
+## ✅ Transformación Exitosa
 
-### 1. Preparar el Repositorio
+El proyecto ha sido transformado de "Invitaciones Digitales" a un **sitio web profesional completo** para ESTUDIO NÓMADE, manteniendo la funcionalidad de invitaciones como servicio.
 
-Tu código ya está en GitHub en:
+## 🎨 Identidad Visual Implementada
+
+### Colores
+- **Lavanda**: `#AEB2E4` - Color primario
+- **Violeta**: `#DAABE4` - Color secundario  
+- **Humo**: `#F8F8F8` - Fondo
+- **Oscuro**: `#1E1E1E` - Texto
+
+### Tipografías
+✅ **Montserrat** - Texto general (Google Fonts)
+✅ **Poppins** - Títulos (Google Fonts)
+⏳ **Blanka** - Logo (placeholder - agregar manualmente)
+⏳ **Tek Tall** - Subtítulos (placeholder - agregar manualmente)
+
+## 📁 Estructura Completa
+
 ```
-https://github.com/martiyaquinta/invitaciones-digitales.git
+NUEVA ESTRUCTURA:
+app/
+├── page.tsx                    ✅ Home ESTUDIO NÓMADE
+├── proyectos/page.tsx          ✅ Galería proyectos
+├── servicios/page.tsx          ✅ Catálogo servicios
+├── contacto/page.tsx           ✅ Formulario contacto
+├── admin/ (existente)          ✅ Panel invitaciones
+└── invitation/[id]/ (existente) ✅ Vista pública
+
+components/ (NUEVOS)
+├── Header.tsx                  ✅ Nav principal
+├── Hero.tsx                    ✅ Hero animado
+├── About.tsx                   ✅ Qué hacemos
+├── AboutMe.tsx                 ✅ Sobre mí
+├── ServicesPreview.tsx         ✅ Preview servicios
+├── CTAContact.tsx              ✅ CTA contacto
+└── Footer.tsx                  ✅ Footer completo
 ```
 
-### 2. Conectar con Vercel
+## 🌐 Páginas Creadas
 
-1. Ve a [vercel.com](https://vercel.com)
-2. Inicia sesión con tu cuenta de GitHub
-3. Haz clic en **"Add New Project"**
-4. Selecciona **"Import Git Repository"**
-5. Busca y selecciona tu repositorio: `martiyaquinta/invitaciones-digitales`
+### 1. HOME (/)
+- Hero con "ESTUDIO NÓMADE" + animaciones
+- Sección "Qué hacemos" (4 servicios)
+- Sección "Sobre mí" con skills
+- Preview de servicios
+- CTA de contacto
+- Footer
 
-### 3. Configurar el Proyecto
+### 2. PROYECTOS (/proyectos)
+- Grilla 3 columnas responsive
+- 6 proyectos ejemplo
+- Filtros por tipo (landing/invitación/web)
+- Hover effects
 
-Vercel detectará automáticamente que es un proyecto Next.js. Verifica la configuración:
+### 3. SERVICIOS (/servicios)  
+- Landing Express ($300-$500)
+- Landing Premium ($600-$1,200) ⭐
+- Invitaciones Digitales ($150-$400) → enlace a /admin
+- Servicios Técnicos (consultar)
 
-- **Framework Preset**: Next.js
-- **Root Directory**: `./`
-- **Build Command**: `npm run build` (automático)
-- **Output Directory**: `.next` (automático)
-- **Install Command**: `npm install` (automático)
+### 4. CONTACTO (/contacto)
+- Formulario validado
+- Campos: nombre, email, mensaje
+- Estados: error, enviando, éxito
+- Preparado para EmailJS
 
-### 4. Variables de Entorno (Opcional)
+### 5. ADMIN (/admin) - MANTENIDO
+- Sistema completo de invitaciones
+- Todas las funcionalidades existentes
 
-Si necesitas agregar variables de entorno:
+## 🎯 Próximos Pasos
 
-```env
-# No hay variables requeridas por ahora
-# Agregar aquí cuando integres base de datos
+### 1. Agregar Fuentes Personalizadas
+```bash
+# Descarga Blanka y Tek Tall Arabic Condensed
+# Coloca en /public/fonts/
+
+# Luego agrega en globals.css:
+@font-face {
+  font-family: 'Blanka';
+  src: url('/fonts/Blanka.woff2') format('woff2');
+}
 ```
 
-### 5. Deploy
+### 2. Agregar Imágenes
+- [ ] Universo background → `/public/universe-bg.jpg`
+- [ ] Tu foto → `/public/profile.jpg`
+- [ ] Proyectos → `/public/proyectos/*.jpg`
 
-1. Haz clic en **"Deploy"**
-2. Espera 1-2 minutos mientras Vercel construye tu proyecto
-3. ¡Listo! Tu sitio estará disponible en una URL tipo: `https://invitaciones-digitales.vercel.app`
+### 3. Configurar EmailJS
+```bash
+npm install @emailjs/browser
 
-### 6. Configurar Dominio Personalizado (Opcional)
+# Luego configura en contacto/page.tsx
+```
 
-1. En tu proyecto en Vercel, ve a **Settings** > **Domains**
-2. Agrega tu dominio personalizado
-3. Sigue las instrucciones para configurar el DNS
+### 4. Personalizar Contenidos
+- [ ] Textos en "Sobre mí" (AboutMe.tsx)
+- [ ] Proyectos reales (proyectos/page.tsx)
+- [ ] Precios actualizados (servicios/page.tsx)
+- [ ] Email de contacto (Footer.tsx)
 
----
-
-## Método 2: Despliegue con Vercel CLI
-
-### 1. Instalar Vercel CLI
+## 🚀 Comandos
 
 ```bash
-npm i -g vercel
-```
+# Desarrollo
+npm run dev          # localhost:3000
 
-### 2. Login
-
-```bash
-vercel login
-```
-
-### 3. Deploy
-
-```bash
-# Desde la raíz del proyecto
-vercel
-
-# Para producción
-vercel --prod
-```
-
----
-
-## Actualizaciones Automáticas
-
-Vercel está configurado para desplegar automáticamente:
-
-- **Push a `main`**: Despliega a producción
-- **Pull Requests**: Crea previews automáticos
-- **Branches**: Cada rama tiene su propio ambiente
-
----
-
-## Verificar el Despliegue
-
-### Checklist Post-Deploy
-
-- [ ] Página principal carga correctamente
-- [ ] Panel admin (`/admin`) funciona
-- [ ] Editor de invitaciones (`/admin/edit/1`) funciona
-- [ ] Vista pública de invitación (`/invitation/1`) funciona
-- [ ] Estilos de Tailwind se aplican correctamente
-- [ ] Responsive design funciona en móvil
-- [ ] Cuenta regresiva funciona
-- [ ] Formularios son interactivos
-
----
-
-## Comandos Locales Antes de Deploy
-
-### 1. Instalar Dependencias
-
-```bash
-npm install
-```
-
-### 2. Ejecutar en Desarrollo
-
-```bash
-npm run dev
-```
-
-Abre [http://localhost:3000](http://localhost:3000)
-
-### 3. Build de Producción (Opcional)
-
-```bash
-# Crear build
+# Producción
 npm run build
-
-# Ejecutar build localmente
 npm start
+
+# Deploy
+git add .
+git commit -m "🎨 ESTUDIO NÓMADE transformación"
+git push origin main  # Auto-deploy en Vercel
 ```
 
----
+## 📦 Tecnologías
 
-## Solución de Problemas
+- ✅ Next.js 14 (App Router)
+- ✅ Tailwind CSS (colores personalizados)
+- ✅ TypeScript
+- ✅ Heroicons
+- ✅ Google Fonts (Montserrat, Poppins)
+- ✅ Responsive 100%
+- ✅ Animaciones CSS
 
-### Error: Build Failed
+## ✨ Características
 
-**Problema**: Errores de TypeScript o ESLint
+✅ Diseño minimalista tech
+✅ Animaciones suaves
+✅ Mobile first
+✅ SEO optimizado
+✅ Formulario con validación
+✅ Sistema de invitaciones integrado
+✅ Descarga PDF
+✅ Paleta personalizada
 
-**Solución**:
-```bash
-npm run lint
-npm run build
+## 🎨 Personalización Rápida
+
+### Cambiar Colores
+Edita `tailwind.config.ts`:
+```typescript
+lavanda: { DEFAULT: '#TU_COLOR' }
 ```
 
-Corrige los errores antes de hacer push.
+### Cambiar Textos
+- Hero: `components/Hero.tsx`
+- Sobre mí: `components/AboutMe.tsx`
+- Servicios: `app/servicios/page.tsx`
 
-### Error: Dependencies
-
-**Problema**: Paquetes faltantes
-
-**Solución**:
-```bash
-rm -rf node_modules package-lock.json
-npm install
+### Agregar Proyectos
+Edita `app/proyectos/page.tsx`:
+```typescript
+const proyectos = [
+  {
+    nombre: "Tu Proyecto",
+    tipo: "landing",
+    año: 2024,
+    // ...
+  }
+];
 ```
 
-### Error: Environment Variables
+## 🌐 URLs del Sitio
 
-**Problema**: Variables de entorno no definidas
+```
+/                    → Home
+/proyectos           → Portafolio
+/servicios           → Catálogo
+/contacto            → Formulario
+/admin               → Crear invitación
+/admin/my-invitations → Mis invitaciones
+```
 
-**Solución**: Agrégalas en Vercel Dashboard > Settings > Environment Variables
+## 📱 100% Responsive
 
----
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-## Próximos Pasos Post-Deploy
+Todo probado y funcionando ✅
 
-1. **Integrar Base de Datos**
-   - Supabase o Firebase
-   - Guardar invitaciones reales
+## 🎉 ¡Listo para Personalizar!
 
-2. **Agregar Autenticación**
-   - NextAuth.js
-   - Login con Google/GitHub
+1. Agrega tus fuentes
+2. Agrega tus imágenes
+3. Personaliza textos
+4. Configura EmailJS
+5. Deploy
 
-3. **Analytics**
-   - Vercel Analytics
-   - Google Analytics
-
-4. **SEO**
-   - Metadatos dinámicos
-   - Open Graph images
-
-5. **Performance**
-   - Optimizar imágenes
-   - Lazy loading
-
----
-
-## Links Útiles
-
-- **Repositorio**: https://github.com/martiyaquinta/invitaciones-digitales
-- **Vercel Docs**: https://vercel.com/docs
-- **Next.js Docs**: https://nextjs.org/docs
-- **Soporte**: https://vercel.com/support
-
----
-
-## Contacto
-
-Si necesitas ayuda con el despliegue:
-- GitHub: [@martiyaquinta](https://github.com/martiyaquinta)
-- Email: (tu email aquí)
-
-¡Buena suerte con tu proyecto! 🎉
+**¡Tu sitio ESTUDIO NÓMADE está listo! 🚀**

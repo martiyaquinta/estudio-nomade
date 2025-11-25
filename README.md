@@ -1,6 +1,13 @@
-# 💒 Invitaciones Digitales
+# 🎨 Estudio Nómade
 
-Plataforma web moderna para crear y gestionar invitaciones digitales personalizadas para todo tipo de eventos: bodas, XV años, cumpleaños, baby showers, bautizos y más.
+Estudio creativo especializado en diseño gráfico, branding y desarrollo web. Creamos experiencias digitales únicas que conectan marcas con su audiencia.
+
+## 🎯 Servicios
+
+- **Diseño Gráfico & Branding** - Identidad visual completa para tu marca
+- **Desarrollo Web** - Sitios web modernos y aplicaciones a medida
+- **Invitaciones Digitales** - Plataforma para crear invitaciones personalizadas para eventos especiales
+- **Consultoría Digital** - Estrategia y optimización de presencia online
 
 ## ✨ Características
 
@@ -43,8 +50,8 @@ Plataforma web moderna para crear y gestionar invitaciones digitales personaliza
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/martiyaquinta/invitaciones-digitales.git
-cd invitaciones-digitales
+git clone https://github.com/martiyaquinta/estudio-nomade.git
+cd estudio-nomade
 ```
 
 2. **Instalar dependencias**
@@ -69,7 +76,7 @@ http://localhost:3000
 ## 🏗️ Estructura del Proyecto
 
 ```
-invitaciones-digitales/
+estudio-nomade/
 ├── app/
 │   ├── admin/              # Panel de administración
 │   │   ├── edit/[id]/      # Editor de invitaciones
