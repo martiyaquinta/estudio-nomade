@@ -6,19 +6,19 @@ export default function ServicesPreview() {
     {
       title: "Landing Page Express",
       description: "Landing profesional lista en 48-72 horas",
-      price: "Desde $300",
+      price: "Desde $200",
       features: ["Diseño personalizado", "Responsive", "SEO básico", "Formulario de contacto"]
     },
     {
       title: "Landing Page Premium",
       description: "Experiencia web completa y optimizada",
-      price: "Desde $600",
+      price: "Desde $400",
       features: ["Diseño avanzado", "Animaciones", "SEO optimizado", "Integraciones"]
     },
     {
       title: "Invitaciones Digitales",
       description: "Invitaciones únicas para tus eventos",
-      price: "Desde $150",
+      price: "Desde $80",
       features: ["Diseño personalizado", "RSVP integrado", "Galería de fotos", "Descarga PDF"]
     }
   ];
