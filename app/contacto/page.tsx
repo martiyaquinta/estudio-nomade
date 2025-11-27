@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { EnvelopeIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
@@ -45,15 +46,31 @@ export default function ContactoPage() {
 
     setIsSubmitting(true);
 
-    // Simular envío (aquí se integrará EmailJS o API route)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Enviar email usando EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        {
+          from_name: formData.nombre,
+          from_email: formData.email,
+          message: formData.mensaje,
+          to_email: 'estudionomade2025@gmail.com'
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      );
+
       setSubmitSuccess(true);
       setFormData({ nombre: "", email: "", mensaje: "" });
       
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error al enviar email:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -188,10 +205,10 @@ export default function ContactoPage() {
                 También puedes escribirme directamente a:
               </p>
               <a
-                href="mailto:hola@estudionomade.com"
+                href="mailto:estudionomade2025@gmail.com"
                 className="text-lavanda hover:text-violeta font-medium transition-colors"
               >
-                hola@estudionomade.com
+                estudionomade2025@gmail.com
               </a>
             </div>
           </div>
