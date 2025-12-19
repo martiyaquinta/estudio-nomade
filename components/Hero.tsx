@@ -34,7 +34,7 @@ export default function Hero() {
 
           {/* Descripción */}
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in delay-400">
-            Desde cualquier lugar del universo. Para cualquier lugar del mundo,
+            Desde cualquier lugar del universo. Para cualquier lugar del mundo.
           </p>
 
           {/* Botones */}

@@ -81,29 +81,55 @@ export default function ProyectosPage() {
       {/* Grilla de Proyectos */}
       <section className="pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             {proyectos.map((proyecto) => (
               <div
                 key={proyecto.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-lavanda/20 hover:border-violeta/50 hover:shadow-xl transition-all duration-300"
+                className="group flex flex-col items-center"
               >
-                {/* Imagen */}
-                <div className="aspect-video bg-gradient-to-br from-lavanda/20 to-violeta/20 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center text-lavanda/40 text-sm">
-                    Imagen del proyecto
+                {/* Mockup de Celular */}
+                <div className="relative w-full max-w-[280px] mx-auto">
+                  {/* Marco del celular */}
+                  <div className="relative bg-gradient-to-br from-oscuro via-oscuro/90 to-oscuro rounded-[3rem] p-3 shadow-2xl">
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-oscuro rounded-b-2xl z-10"></div>
+                    
+                    {/* Pantalla del celular */}
+                    <div className="relative bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5] shadow-inner">
+                      {/* Contenido de la pantalla */}
+                      <div className="h-full overflow-hidden">
+                        {/* Header de la app */}
+                        <div className="bg-gradient-to-r from-lavanda to-violeta h-12 flex items-center justify-center">
+                          <div className="w-20 h-1 bg-white/30 rounded-full"></div>
+                        </div>
+                        
+                        {/* Preview del proyecto */}
+                        <div className="p-4 h-full bg-gradient-to-br from-lavanda/10 to-violeta/10">
+                          <div className="bg-white rounded-2xl shadow-lg h-full flex items-center justify-center overflow-hidden">
+                            <div className="text-center p-4">
+                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-lavanda to-violeta mx-auto mb-3 flex items-center justify-center">
+                                <span className="text-2xl text-white">
+                                  {proyecto.tipo === 'landing' ? '🎯' : 
+                                   proyecto.tipo === 'invitación' ? '💌' : '🌐'}
+                                </span>
+                              </div>
+                              <div className="text-lavanda/40 text-xs mb-2">
+                                Vista previa
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Botón lateral */}
+                    <div className="absolute right-0 top-24 w-1 h-12 bg-oscuro/60 rounded-l"></div>
                   </div>
-                  {/* Aquí irá la imagen real */}
-                  {/* <Image 
-                    src={proyecto.imagen} 
-                    alt={proyecto.nombre}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  /> */}
                 </div>
 
-                {/* Contenido */}
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
+                {/* Info del Proyecto */}
+                <div className="mt-6 text-center max-w-[280px] w-full">
+                  <div className="flex items-center justify-center gap-2 mb-3">
                     <span className={`px-3 py-1 ${tipos[proyecto.tipo as keyof typeof tipos].bg} ${tipos[proyecto.tipo as keyof typeof tipos].color} text-xs font-medium rounded-full`}>
                       {proyecto.tipo}
                     </span>
