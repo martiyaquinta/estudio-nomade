@@ -81,15 +81,22 @@ export default function ProyectosPage() {
                         
                         {/* Preview del proyecto */}
                         <div className="h-full bg-gradient-to-br from-lavanda/10 to-violeta/10">
-                          <div className="bg-white h-full flex items-center justify-center overflow-hidden">
+                          <div className="bg-white h-full flex items-center justify-center overflow-hidden relative">
                             {proyecto.url ? (
                               // Mostrar iframe si tiene URL
-                              <iframe 
-                                src={proyecto.url}
-                                className="w-full h-full border-0"
-                                title={proyecto.nombre}
-                                loading="lazy"
-                              />
+                              <div className="w-full h-full overflow-hidden">
+                                <iframe 
+                                  src={proyecto.url}
+                                  className="w-full h-full border-0 origin-top-left"
+                                  style={{
+                                    transform: 'scale(0.25)',
+                                    width: '400%',
+                                    height: '400%'
+                                  }}
+                                  title={proyecto.nombre}
+                                  loading="lazy"
+                                />
+                              </div>
                             ) : (
                               // Mostrar placeholder si no tiene URL
                               <div className="text-center p-4">
