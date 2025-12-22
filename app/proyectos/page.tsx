@@ -22,59 +22,11 @@ export default function ProyectosPage() {
     },
     {
       id: 3,
-      nombre: "Landing Café Boutique",
+      nombre: "Lo Saludable",
       tipo: "landing",
-      año: 2024,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Landing page minimalista para cafetería especializada"
-    },
-    {
-      id: 3,
-      nombre: "Landing Café Boutique",
-      tipo: "landing",
-      año: 2024,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Landing page minimalista para cafetería especializada"
-    },
-    {
-      id: 4,
-      nombre: "Invitación XV Sofía",
-      tipo: "invitación",
-      año: 2024,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Invitación digital interactiva con RSVP"
-    },
-    {
-      id: 5,
-      nombre: "Portfolio Fotógrafo",
-      tipo: "web",
-      año: 2024,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Sitio web completo con galería y blog"
-    },
-    {
-      id: 6,
-      nombre: "Landing Wellness",
-      tipo: "landing",
-      año: 2023,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Página de servicios de bienestar"
-    },
-    {
-      id: 7,
-      nombre: "Boda Ana & Carlos",
-      tipo: "invitación",
-      año: 2023,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Invitación elegante con contador regresivo"
-    },
-    {
-      id: 8,
-      nombre: "E-commerce Artesanías",
-      tipo: "web",
-      año: 2023,
-      imagen: "/placeholder-project.jpg",
-      descripcion: "Tienda online con carrito de compras"
+      año: 2025,
+      url: "https://losaludable.vercel.app/",
+      descripcion: "Landing page con redireccionamiento a WhatsApp para pedidos de comida saludable"
     },
   ];
 
