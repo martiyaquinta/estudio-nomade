@@ -4,11 +4,21 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-dark via-navy to-navy-light">
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-orange/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-lavanda/10 rounded-full blur-3xl animate-float-delayed" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video de fondo */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video.webm" type="video/webm" />
+        </video>
+        {/* Overlay oscuro para mejorar legibilidad del texto */}
+        <div className="absolute inset-0 bg-navy/70 backdrop-blur-[2px]" />
       </div>
 
       {/* Contenido */}
@@ -63,7 +73,7 @@ export default function Hero() {
             <div className="h-20 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
             <div className="flex flex-col items-center opacity-90 hover:opacity-100 transition-opacity">
               <Image
-                src="/logo grovia sinfondo.png"
+                src="/groviasinfondo.png"
                 alt="Grovia Marketing"
                 width={100}
                 height={100}
