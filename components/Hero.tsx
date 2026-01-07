@@ -42,17 +42,17 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contacto"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-base"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-sm sm:text-base"
               >
                 QUIERO UNA ASESORÍA GRATUITA
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/contacto"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-navy font-montserrat font-bold rounded-full hover:bg-white/90 transition-all transform hover:scale-105 shadow-2xl text-base border-2 border-white/20"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white text-navy font-montserrat font-bold rounded-full hover:bg-white/90 transition-all transform hover:scale-105 shadow-2xl text-sm sm:text-base border-2 border-white/20"
               >
                 QUIERO CONTACTAR UN EXPERTO
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
