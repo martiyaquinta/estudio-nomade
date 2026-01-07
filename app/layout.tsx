@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: 'swap',
-});
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const poppins = Poppins({ 
+const openSans = Open_Sans({ 
   subsets: ["latin"],
-  variable: '--font-poppins',
+  variable: '--font-open-sans',
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Estudio Nómade - Diseño y código en movimiento",
-  description: "Creamos experiencias digitales únicas. Diseño web, invitaciones digitales y servicios técnicos desde cualquier lugar del mundo.",
+  title: "Estudio Nómade + Grovia - Diseño web y marketing digital",
+  description: "Código y diseño en movimiento + Estrategia de marketing digital. Creamos experiencias digitales únicas con enfoque en resultados.",
 };
 
 export default function RootLayout({
@@ -32,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${poppins.variable}`}>
-      <body className={`${montserrat.className} antialiased bg-humo text-oscuro`}>
+    <html lang="es" className={`${montserrat.variable} ${openSans.variable}`}>
+      <body className={`${openSans.className} antialiased bg-humo text-oscuro`}>
         {children}
       </body>
     </html>

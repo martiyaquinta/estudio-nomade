@@ -22,16 +22,27 @@ const config: Config = {
           light: '#E8C9F0',
           dark: '#C98CD1',
         },
+        // Paleta GROVIA MARKETING (colaboración)
+        navy: {
+          DEFAULT: '#1E3A8A',
+          light: '#3B82F6',
+          dark: '#1E293B',
+        },
+        orange: {
+          DEFAULT: '#F97316',
+          light: '#FB923C',
+          dark: '#EA580C',
+        },
         humo: '#F8F8F8',
         oscuro: '#1E1E1E',
       },
       fontFamily: {
-        serif: ['Georgia', 'serif'],
-        sans: ['var(--font-montserrat)', 'Inter', 'sans-serif'],
-        display: ['var(--font-poppins)', 'sans-serif'],
-        // Placeholders para fuentes personalizadas
+        sans: ['var(--font-open-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        openSans: ['var(--font-open-sans)', 'sans-serif'],
+        // Fuentes adicionales Estudio Nómade
         blanka: ['Blanka', 'sans-serif'],
-        tek: ['Tek Tall Arabic Condensed', 'sans-serif'],
       },
     },
   },

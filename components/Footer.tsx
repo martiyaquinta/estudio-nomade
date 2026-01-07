@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,14 +10,45 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Marca */}
           <div>
-            <h3 className="text-2xl font-blanka text-lavanda mb-4">
-              ESTUDIO NÓMADE
-            </h3>
-            <p className="text-white/70">
-              Diseño y código en movimiento.
-              <br />
-              Desde cualquier lugar del mundo.
-            </p>
+            <div className="space-y-6">
+              {/* Estudio Nómade */}
+              <div className="flex items-center gap-4">
+                <Image 
+                  src="/logosinfondo.png" 
+                  alt="Estudio Nómade" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain grayscale"
+                />
+                <div>
+                  <h3 className="text-lg font-blanka text-white mb-1">
+                    ESTUDIO NÓMADE
+                  </h3>
+                  <p className="text-sm text-white/60 italic">
+                    Diseño y código en movimiento
+                  </p>
+                </div>
+              </div>
+
+              {/* Grovia */}
+              <div className="flex items-center gap-4">
+                <Image 
+                  src="/logo grovia sinfondo.png" 
+                  alt="Grovia Marketing" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain grayscale"
+                />
+                <div>
+                  <h3 className="text-lg font-montserrat font-bold text-white mb-1">
+                    GROVIA
+                  </h3>
+                  <p className="text-sm text-white/60 italic">
+                    Marketing que impulsa resultados
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Enlaces */}
@@ -44,13 +76,20 @@ export default function Footer() {
           {/* Contacto */}
           <div>
             <h4 className="font-semibold mb-4">Conecta</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
-                <a href="mailto:estudionomade2025@gmail.com" className="text-white/70 hover:text-violeta transition-colors">
+                <p className="text-xs text-white/50 mb-1">Estudio Nómade</p>
+                <a href="mailto:estudionomade2025@gmail.com" className="text-white/70 hover:text-lavanda transition-colors text-sm">
                   estudionomade2025@gmail.com
                 </a>
               </li>
               <li>
+                <p className="text-xs text-white/50 mb-1">Grovia Marketing</p>
+                <a href="mailto:groviaagencia@gmail.com" className="text-white/70 hover:text-orange transition-colors text-sm">
+                  groviaagencia@gmail.com
+                </a>
+              </li>
+              <li className="pt-2">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violeta transition-colors">
                   Instagram
                 </a>
@@ -66,7 +105,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-white/50 text-sm">
-          <p>© {currentYear} Estudio Nómade. Todos los derechos reservados.</p>
+          <p>© {currentYear} Estudio Nómade + Grovia Marketing. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

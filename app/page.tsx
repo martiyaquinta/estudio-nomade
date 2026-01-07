@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import AboutMe from "@/components/AboutMe";
+import Benefits from "@/components/Benefits";
+import Portfolio from "@/components/Portfolio";
 import ServicesPreview from "@/components/ServicesPreview";
 import CTAContact from "@/components/CTAContact";
 import Footer from "@/components/Footer";
@@ -12,7 +13,8 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <AboutMe />
+      <Benefits />
+      <Portfolio />
       <ServicesPreview />
       <CTAContact />
       <Footer />

@@ -1,73 +1,74 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { CheckIcon, ClockIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon } from "@heroicons/react/24/outline";
 
 export default function ServiciosPage() {
   const servicios = [
     {
-      nombre: "Landing Page Express",
-      descripcion: "Ideal para lanzamientos rápidos o promociones temporales",
-      precio: "$300 - $500",
-      tiempo: "48-72 horas",
+      nombre: "Landing Page + Estrategia de Marketing",
+      descripcion: "Crear una landing page enfocada en convertir visitantes en leads o ventas, acompañada de una estrategia clara de marketing.",
       caracteristicas: [
-        "Diseño personalizado minimalista",
-        "100% responsive",
-        "Formulario de contacto funcional",
-        "SEO básico optimizado",
-        "Hosting incluido (1 mes)",
-        "1 ronda de revisiones"
+        "Brief estratégico",
+        "Definición de objetivo (venta / lead / agenda)",
+        "Copy estratégico",
+        "Diseño y desarrollo de landing",
+        "CTA claro",
+        "Integración de formularios o WhatsApp",
+        "Revisión y ajustes"
       ],
-      destacado: false
+      destacado: true,
+      icon: RocketLaunchIcon,
+      colores: "violeta"
     },
     {
-      nombre: "Landing Page Premium",
-      descripcion: "Experiencia web completa con animaciones y funcionalidades avanzadas",
-      precio: "$600 - $1,200",
-      tiempo: "1-2 semanas",
+      nombre: "Web Institucional para Emprendedores",
+      descripcion: "Dar presencia digital profesional y generar confianza con una web completa de 3 a 5 secciones.",
       caracteristicas: [
-        "Diseño avanzado con animaciones",
-        "Optimización SEO completa",
-        "Integraciones (analytics, CRM, etc.)",
-        "Blog o sección de noticias",
-        "Hosting incluido (3 meses)",
-        "3 rondas de revisiones",
-        "Soporte post-lanzamiento"
-      ],
-      destacado: true
-    },
-    {
-      nombre: "Invitaciones Digitales",
-      descripcion: "Invitaciones únicas para bodas, XV años, cumpleaños y eventos especiales",
-      precio: "$150 - $400",
-      tiempo: "3-5 días",
-      caracteristicas: [
-        "6 plantillas personalizables",
-        "Formulario RSVP integrado",
-        "Contador regresivo animado",
-        "Galería de fotos con carrusel",
-        "Mapa de ubicación interactivo",
-        "Datos bancarios para regalos",
-        "Descarga como PDF",
-        "Animaciones y efectos visuales"
+        "Web de 3 a 5 secciones",
+        "Copy estratégico",
+        "Diseño funcional",
+        "Desarrollo web responsive",
+        "SEO básico",
+        "Formularios de contacto",
+        "Optimización mobile"
       ],
       destacado: false,
+      icon: DevicePhoneMobileIcon,
+      colores: "navy"
+    },
+    {
+      nombre: "Invitaciones Digitales / Páginas de Eventos",
+      descripcion: "Crear una página simple, clara y visual para eventos o celebraciones.",
+      caracteristicas: [
+        "Página única personalizada",
+        "Información del evento",
+        "Diseño personalizado",
+        "RSVP o confirmación",
+        "Link compartible / QR",
+        "Integración con WhatsApp",
+        "Estilo visual único"
+      ],
+      destacado: false,
+      icon: SparklesIcon,
+      colores: "lavanda",
       link: "/admin"
     },
     {
-      nombre: "Servicios Técnicos Estacionales",
-      descripcion: "Soluciones IT para nómades digitales y espacios remotos",
-      precio: "Consultar",
-      tiempo: "Variable",
+      nombre: "Pack Lanzamiento",
+      descripcion: "Ayudar a un negocio a salir al mercado con claridad, combinando web + marketing. Nuestro servicio estrella.",
       caracteristicas: [
-        "Instalación y configuración Starlink",
-        "Setup de routers y redes mesh",
-        "Optimización de conectividad",
-        "Configuración de VPN",
-        "Soluciones de respaldo energético",
-        "Consultoría técnica remota"
+        "Diagnóstico profundo",
+        "Estrategia de marca",
+        "Web o landing profesional",
+        "CTA claro y efectivo",
+        "Recomendaciones de lanzamiento",
+        "Documento de próximos pasos",
+        "Propuesta de mantenimiento o ads"
       ],
-      destacado: false
+      destacado: false,
+      icon: MegaphoneIcon,
+      colores: "orange"
     }
   ];
 
@@ -76,93 +77,114 @@ export default function ServiciosPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#0b1226] via-navy to-[#0b1226]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl sm:text-6xl font-display font-bold text-oscuro mb-6">
+            <h1 className="text-5xl sm:text-6xl font-display font-bold text-white mb-6">
               Servicios
             </h1>
-            <p className="text-xl text-oscuro/70">
-              Soluciones digitales diseñadas para impulsar tu presencia online
+            <p className="text-xl text-white/90 mb-4">
+              Desarrollo web + Estrategia de marketing digital
             </p>
+            <div className="inline-block px-6 py-3 bg-orange/20 border border-orange/50 rounded-full">
+              <p className="text-orange font-semibold">
+                💬 Consultoría gratuita · Presupuesto personalizado
+              </p>
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <span className="text-lavanda text-sm">Estudio Nómade</span>
+              <span className="text-white/50">·</span>
+              <span className="text-orange text-sm">Grovia Marketing</span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Servicios */}
-      <section className="pb-24">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {servicios.map((servicio, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl p-8 border-2 transition-all duration-300 ${
-                  servicio.destacado
-                    ? 'border-violeta shadow-xl scale-105'
-                    : 'border-lavanda/20 hover:border-violeta/50 hover:shadow-lg'
-                }`}
-              >
-                {servicio.destacado && (
-                  <span className="inline-block px-4 py-1 bg-violeta text-white text-sm font-medium rounded-full mb-4">
-                    Más popular
-                  </span>
-                )}
-                
-                <h2 className="text-3xl font-bold text-oscuro mb-3">
-                  {servicio.nombre}
-                </h2>
-                
-                <p className="text-oscuro/70 mb-6">
-                  {servicio.descripcion}
-                </p>
+            {servicios.map((servicio, index) => {
+              const IconComponent = servicio.icon;
+              const borderColor = servicio.colores === "orange" ? "border-orange" :
+                                 servicio.colores === "navy" ? "border-navy" :
+                                 servicio.colores === "lavanda" ? "border-lavanda" :
+                                 "border-violeta";
+              const bgColor = servicio.colores === "orange" ? "bg-orange/10" :
+                             servicio.colores === "navy" ? "bg-navy/10" :
+                             servicio.colores === "lavanda" ? "bg-lavanda/10" :
+                             "bg-violeta/10";
+              const iconColor = servicio.colores === "orange" ? "text-orange" :
+                               servicio.colores === "navy" ? "text-navy" :
+                               servicio.colores === "lavanda" ? "text-lavanda" :
+                               "text-violeta";
+              const buttonStyles = servicio.destacado
+                ? "bg-violeta text-white hover:bg-violeta/90"
+                : servicio.colores === "orange"
+                  ? "border-2 border-orange text-orange hover:bg-orange hover:text-white"
+                  : servicio.colores === "navy"
+                    ? "border-2 border-navy text-navy hover:bg-navy hover:text-white"
+                    : servicio.colores === "lavanda"
+                      ? "border-2 border-lavanda text-lavanda hover:bg-lavanda hover:text-white"
+                      : "border-2 border-violeta text-violeta hover:bg-violeta hover:text-white";
+              
+              return (
+                <div
+                  key={index}
+                  className={`bg-white rounded-2xl p-8 border-2 transition-all duration-300 ${
+                    servicio.destacado
+                      ? `${borderColor} shadow-xl scale-105`
+                      : `${borderColor}/20 hover:${borderColor} hover:shadow-lg`
+                  }`}
+                >
+                  {servicio.destacado && (
+                    <span className="inline-block px-4 py-1 bg-violeta text-white text-sm font-medium rounded-full mb-4">
+                      Recomendado
+                    </span>
+                  )}
+                  
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`w-14 h-14 ${bgColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className={`w-7 h-7 ${iconColor}`} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-oscuro">
+                      {servicio.nombre}
+                    </h2>
+                  </div>
+                  
+                  <p className="text-oscuro/70 mb-6">
+                    {servicio.descripcion}
+                  </p>
 
-                <div className="flex items-center gap-6 mb-6 pb-6 border-b border-lavanda/20">
-                  <div className="flex items-center gap-2">
-                    <CurrencyDollarIcon className="w-5 h-5 text-lavanda" />
-                    <span className="text-2xl font-bold text-violeta">
-                      {servicio.precio}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 text-oscuro/70">
-                    <ClockIcon className="w-5 h-5 text-lavanda" />
-                    <span className="text-sm">
-                      {servicio.tiempo}
-                    </span>
-                  </div>
+                  <ul className="space-y-3 mb-8">
+                    {servicio.caracteristicas.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckIcon className={`w-5 h-5 ${iconColor} flex-shrink-0 mt-0.5`} />
+                        <span className="text-oscuro/80 text-sm">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {servicio.link ? (
+                    <Link
+                      href={servicio.link}
+                      className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
+                    >
+                      Crear invitación
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/contacto"
+                      className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
+                    >
+                      Solicitar consultoría gratuita
+                    </Link>
+                  )}
                 </div>
-
-                <ul className="space-y-3 mb-8">
-                  {servicio.caracteristicas.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckIcon className="w-5 h-5 text-lavanda flex-shrink-0 mt-0.5" />
-                      <span className="text-oscuro/80">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {servicio.link ? (
-                  <Link
-                    href={servicio.link}
-                    className="block w-full text-center px-6 py-3 bg-violeta text-white font-semibold rounded-full hover:bg-violeta/90 transition-all transform hover:scale-105"
-                  >
-                    Crear invitación
-                  </Link>
-                ) : (
-                  <Link
-                    href="/contacto"
-                    className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${
-                      servicio.destacado
-                        ? 'bg-violeta text-white hover:bg-violeta/90'
-                        : 'border-2 border-lavanda text-lavanda hover:bg-lavanda hover:text-white'
-                    }`}
-                  >
-                    Solicitar presupuesto
-                  </Link>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

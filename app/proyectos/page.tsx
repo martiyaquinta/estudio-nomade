@@ -89,9 +89,9 @@ export default function ProyectosPage() {
                                   src={proyecto.url}
                                   className="w-full h-full border-0 origin-top-left"
                                   style={{
-                                    transform: 'scale(0.25)',
-                                    width: '400%',
-                                    height: '400%'
+                                    transform: 'scale(0.40)',
+                                    width: '250%',
+                                    height: '250%'
                                   }}
                                   title={proyecto.nombre}
                                   loading="lazy"

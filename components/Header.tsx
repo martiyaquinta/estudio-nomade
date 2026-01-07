@@ -12,24 +12,20 @@ export default function Header() {
     { name: "Inicio", href: "/" },
     { name: "Proyectos", href: "/proyectos" },
     { name: "Servicios", href: "/servicios" },
+    { name: "Sobre nosotros", href: "/sobre-nosotros" },
     { name: "Contacto", href: "/contacto" },
   ];
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-[#0b1226] backdrop-blur-md border-b border-lavanda/20">
+    <header className="fixed w-full top-0 z-50 bg-white backdrop-blur-md border-b border-oscuro/10 shadow-sm">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo - Solo texto */}
           <Link href="/" className="flex items-center gap-3">
-            <Image 
-              src="/logosinfondo.png" 
-              alt="Estudio Nómade Logo" 
-              width={40} 
-              height={40}
-              className="w-10 h-10 object-contain"
-            />
-            <div className="text-2xl font-blanka text-lavanda">
-              ESTUDIO NÓMADE
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-blanka text-oscuro">ESTUDIO NÓMADE</span>
+              <span className="text-oscuro/30">X</span>
+              <span className="text-lg font-montserrat font-bold text-oscuro">GROVIA</span>
             </div>
           </Link>
 
@@ -39,7 +35,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-white hover:text-lavanda transition-colors"
+                className="text-sm font-medium text-oscuro hover:text-orange transition-colors"
               >
                 {item.name}
               </Link>
@@ -49,7 +45,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-oscuro"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -68,7 +64,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-base font-medium text-white hover:text-lavanda transition-colors"
+                  className="text-base font-medium text-oscuro hover:text-orange transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
