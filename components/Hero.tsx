@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="h-20 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
             <div className="flex flex-col items-center opacity-90 hover:opacity-100 transition-opacity">
               <Image
-                src="/groviasinfondo.png"
+                src="/grovia sin fondo.png"
                 alt="Grovia Marketing"
                 width={100}
                 height={100}
