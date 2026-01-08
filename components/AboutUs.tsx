@@ -27,11 +27,11 @@ export default function AboutUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-navy">Grovia Marketing</h3>
-                  <p className="text-sm text-orange font-semibold">Técnicos en Marketing Digital</p>
+                  <p className="text-sm text-orange font-semibold">Técnico en Marketing</p>
                 </div>
               </div>
               <p className="text-oscuro/80 leading-relaxed text-lg">
-                Somos un equipo de técnicos especializados en marketing digital. Nos dedicamos a crear estrategias efectivas que conectan marcas con sus clientes. Desde campañas publicitarias hasta análisis de mercado, nuestro enfoque está en generar resultados medibles y aumentar la visibilidad de tu negocio en el mundo digital. Convertimos datos en decisiones estratégicas que impulsan el crecimiento.
+                Soy Valentín, técnico en marketing y actualmente estudiante de la Licenciatura en Marketing. Me formé en marketing digital con el objetivo de potenciar mi carrera y brindar un servicio profesional y responsable a mis clientes. Con el tiempo entendí que muchos negocios hacen esfuerzos constantes, pero sin una dirección clara. Para mí, el marketing no es solo una herramienta, es una forma de ordenar ideas, mensajes y decisiones. En un mundo lleno de información y estímulos, creo que el verdadero valor está en simplificar y enfocarse en lo que realmente importa. Desde esa mirada nace mi alianza con Estudio Nómade, con quien trabajamos para ofrecer un servicio integral. La idea es simple: crear recorridos claros y coherentes, y lograr que la experiencia de los usuarios sea diferente al resto. Me apasiona lo que hago y trabajo con quienes buscan crecer con criterio, no con promesas vacías.
               </p>
             </div>
 
@@ -43,11 +43,15 @@ export default function AboutUs() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-navy">Estudio Nómade</h3>
-                  <p className="text-sm text-lavanda font-semibold">Técnica en Sistemas</p>
+                  <p className="text-sm text-lavanda font-semibold">Desarrollo Web y Sistemas</p>
                 </div>
               </div>
               <p className="text-oscuro/80 leading-relaxed text-lg">
-                Soy una técnica en sistemas especializada en desarrollo web y diseño digital. Me dedico a crear sitios web profesionales, funcionales y optimizados, con un enfoque en código limpio y experiencias de usuario intuitivas. Desde landing pages hasta sistemas complejos, mi trabajo está centrado en construir soluciones digitales que no solo se vean bien, sino que funcionen perfectamente y cumplan los objetivos de cada proyecto.
+                Actualmente estoy cursando la carrera de Tecnicatura en Redes Informáticas y Telecomunicaciones. Me formé en desarrollo web y diseño digital a través de distintos cursos, y con el tiempo descubrí que lo que más me gusta es poder trabajar online creando soluciones reales para personas y negocios.
+                <br /><br />
+                Me dedico a diseñar y desarrollar sitios web profesionales, funcionales y optimizados, con foco en la experiencia del usuario, el orden y la claridad. Disfruto transformar ideas en herramientas digitales que no solo se vean bien, sino que realmente funcionen y ayuden a resolver necesidades concretas.
+                <br /><br />
+                Me motiva poder acompañar a cada proyecto, entender sus problemáticas y aportar soluciones simples, eficientes y pensadas a medida. Creo en el trabajo bien hecho, en el detalle y en construir experiencias digitales que aporten valor real.
               </p>
             </div>
           </div>

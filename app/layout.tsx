@@ -17,8 +17,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Estudio Nómade + Grovia - Diseño web y marketing digital",
-  description: "Código y diseño en movimiento + Estrategia de marketing digital. Creamos experiencias digitales únicas con enfoque en resultados.",
+  title: "Estudio Nómade + Grovia - Diseño web y marketing",
+  description: "Código y diseño en movimiento + Estrategia de marketing. Creamos experiencias digitales únicas con enfoque en resultados.",
 };
 
 export default function RootLayout({

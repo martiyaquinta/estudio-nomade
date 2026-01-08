@@ -45,7 +45,7 @@ export default function AboutMe() {
                   TypeScript
                 </span>
                 <span className="px-4 py-2 bg-orange/10 text-orange rounded-full text-sm font-medium">
-                  Marketing Digital
+                  Marketing
                 </span>
                 <span className="px-4 py-2 bg-violeta/10 text-violeta rounded-full text-sm font-medium">
                   Diseño UI/UX

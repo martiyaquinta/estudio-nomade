@@ -32,29 +32,20 @@ export default function Hero() {
               <span className="block">que atraen clientes y ventas</span>
             </h1>
             <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed font-light">
-              Diseño web y marketing digital de alto impacto
+              Diseño web y marketing de alto impacto
             </p>
           </div>
 
 
           {/* CTA Principal - Grande y centrado */}
           <div className="pt-4 animate-fade-in delay-400">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/contacto"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-sm sm:text-base"
-              >
-                QUIERO UNA ASESORÍA GRATUITA
-                <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/contacto"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-white text-navy font-montserrat font-bold rounded-full hover:bg-white/90 transition-all transform hover:scale-105 shadow-2xl text-sm sm:text-base border-2 border-white/20"
-              >
-                QUIERO CONTACTAR UN EXPERTO
-                <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+            <Link
+              href="/contacto"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-sm sm:text-base"
+            >
+              QUIERO UNA ASESORÍA DE MARKETING GRATUITA
+              <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
           {/* Logos duales debajo del CTA */}
@@ -73,14 +64,14 @@ export default function Hero() {
             <div className="h-20 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
             <div className="flex flex-col items-center opacity-90 hover:opacity-100 transition-opacity">
               <Image
-                src="/grovia sin fondo.png"
+                src="/LOGO GROVIA SIN FONDO.png"
                 alt="Grovia Marketing"
                 width={100}
                 height={100}
                 className="object-contain grayscale"
                 priority
               />
-              <span className="text-xs font-semibold text-white/70 mt-2">MARKETING DIGITAL</span>
+              <span className="text-xs font-semibold text-white/70 mt-2">MARKETING</span>
             </div>
           </div>
         </div>

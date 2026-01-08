@@ -84,7 +84,7 @@ export default function ServiciosPage() {
               Servicios
             </h1>
             <p className="text-xl text-white/90 mb-4">
-              Desarrollo web + Estrategia de marketing digital
+              Desarrollo web + Estrategia de marketing
             </p>
             <div className="inline-block px-6 py-3 bg-orange/20 border border-orange/50 rounded-full">
               <p className="text-orange font-semibold">

@@ -33,7 +33,7 @@ export default function Footer() {
               {/* Grovia */}
               <div className="flex items-center gap-4">
                 <Image 
-                  src="/grovia sin fondo.png" 
+                  src="/LOGO GROVIA SIN FONDO.png" 
                   alt="Grovia Marketing" 
                   width={60} 
                   height={60}

@@ -41,7 +41,7 @@ export default function ServicesPreview() {
             Nuestros Servicios
           </h2>
           <p className="text-lg text-oscuro/70 mb-4">
-            Desarrollo web + Estrategia de marketing digital
+            Desarrollo web + Estrategia de marketing
           </p>
           <p className="text-sm text-orange font-semibold">
             💬 Consultoría gratuita · Presupuesto personalizado

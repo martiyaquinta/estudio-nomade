@@ -31,12 +31,12 @@ export default function Portfolio() {
     <section className="py-24 bg-humo">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2 bg-orange/10 border border-orange/30 rounded-full mb-4">
-            <span className="text-orange font-bold text-sm">📈 CASOS DE ÉXITO</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-navy mb-6">
-            Transformamos negocios
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-navy mb-4">
+            Casos de Éxito
           </h2>
+          <p className="text-lg sm:text-xl text-oscuro/60 mb-6">
+            Transformamos negocios
+          </p>
           <p className="text-xl text-oscuro/70 max-w-3xl mx-auto">
             Diseños que no solo se ven bien: <span className="font-bold text-orange">funcionan</span>. Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados.
           </p>
