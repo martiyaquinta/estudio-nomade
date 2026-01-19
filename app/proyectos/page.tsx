@@ -15,18 +15,18 @@ export default function ProyectosPage() {
     {
       id: 2,
       nombre: "Cabalgatas GR Turismo",
-      tipo: "landing",
+      tipo: "web",
       año: 2025,
       url: "https://cabalgatas.grturismoaventura.com/",
-      descripcion: "Landing page para GR Turismo Aventura, cabalgatas en Mendoza."
+      descripcion: "Web institucional para GR Turismo Aventura, cabalgatas en Mendoza."
     },
     {
       id: 3,
       nombre: "Lo Saludable",
-      tipo: "landing",
+      tipo: "web",
       año: 2025,
       url: "https://losaludable.vercel.app/",
-      descripcion: "Landing page con redireccionamiento a WhatsApp para pedidos de comida saludable"
+      descripcion: "Web institucional con múltiples secciones para servicio de comida saludable"
     },
   ];
 

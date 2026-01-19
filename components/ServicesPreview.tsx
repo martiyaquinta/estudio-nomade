@@ -26,10 +26,10 @@ export default function ServicesPreview() {
     },
     {
       title: "Pack Lanzamiento",
-      description: "Web + marketing para salir al mercado",
+      description: "Ecommerce + marketing para salir al mercado",
       icon: MegaphoneIcon,
       colors: "orange",
-      features: ["Diagnóstico profundo", "Estrategia de marca", "Web o landing", "Plan de lanzamiento"]
+      features: ["Diagnóstico del proyecto", "Estrategia de marca y ventas", "Ecommerce listo para vender", "Plan de lanzamiento y captación"]
     }
   ];
 

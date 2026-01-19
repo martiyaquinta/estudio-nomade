@@ -90,7 +90,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violeta transition-colors">
+                <a href="https://www.instagram.com/estudionomade.web/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-violeta transition-colors">
                   Instagram
                 </a>
               </li>

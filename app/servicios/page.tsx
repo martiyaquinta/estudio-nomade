@@ -6,32 +6,30 @@ import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, Megap
 export default function ServiciosPage() {
   const servicios = [
     {
-      nombre: "Landing Page + Estrategia de Marketing",
-      descripcion: "Crear una landing page enfocada en convertir visitantes en leads o ventas, acompañada de una estrategia clara de marketing.",
+      nombre: "Landing Page",
+      queEs: "Una página pensada para un solo objetivo: convertir visitas en contactos o ventas.",
+      paraQueSirve: "Para lanzar un producto, servicio o campaña de forma clara, enfocada y medible.",
       caracteristicas: [
-        "Brief estratégico",
-        "Definición de objetivo (venta / lead / agenda)",
-        "Copy estratégico",
-        "Diseño y desarrollo de landing",
-        "CTA claro",
-        "Integración de formularios o WhatsApp",
-        "Revisión y ajustes"
+        "Mensaje claro y directo",
+        "Diseño enfocado en conversión",
+        "Estructura estratégica de contenido",
+        "Adaptada a mobile",
+        "Integración con formularios, WhatsApp o campañas"
       ],
       destacado: true,
       icon: RocketLaunchIcon,
       colores: "violeta"
     },
     {
-      nombre: "Web Institucional para Emprendedores",
-      descripcion: "Dar presencia digital profesional y generar confianza con una web completa de 3 a 5 secciones.",
+      nombre: "Web Institucional",
+      queEs: "El sitio principal de tu marca: tu base digital. De 3 a 5 secciones.",
+      paraQueSirve: "Para presentar quién sos, qué hacés y generar confianza en tus clientes.",
       caracteristicas: [
-        "Web de 3 a 5 secciones",
-        "Copy estratégico",
-        "Diseño funcional",
-        "Desarrollo web responsive",
-        "SEO básico",
-        "Formularios de contacto",
-        "Optimización mobile"
+        "Diseño alineado a tu identidad",
+        "Estructura clara y profesional",
+        "Escalable en el tiempo",
+        "Optimizada para todos los dispositivos",
+        "Pensada como sistema, no como folleto"
       ],
       destacado: false,
       icon: DevicePhoneMobileIcon,
@@ -39,15 +37,14 @@ export default function ServiciosPage() {
     },
     {
       nombre: "Invitaciones Digitales / Páginas de Eventos",
-      descripcion: "Crear una página simple, clara y visual para eventos o celebraciones.",
+      queEs: "Piezas digitales interactivas para eventos, lanzamientos o celebraciones.",
+      paraQueSirve: "Para comunicar, invitar y organizar de forma simple, moderna y elegante.",
       caracteristicas: [
-        "Página única personalizada",
-        "Información del evento",
         "Diseño personalizado",
-        "RSVP o confirmación",
-        "Link compartible / QR",
-        "Integración con WhatsApp",
-        "Estilo visual único"
+        "Versión mobile first",
+        "Información clara y accesible",
+        "Posibilidad de confirmación de asistencia",
+        "Fácil de compartir"
       ],
       destacado: false,
       icon: SparklesIcon,
@@ -55,16 +52,15 @@ export default function ServiciosPage() {
       link: "/admin"
     },
     {
-      nombre: "Pack Lanzamiento",
-      descripcion: "Ayudar a un negocio a salir al mercado con claridad, combinando web + marketing. Nuestro servicio estrella.",
+      nombre: "Pack Lanzamiento (Ecommerce + estrategia de marketing)",
+      queEs: "Un sistema inicial para salir al mundo con una marca sólida y funcional.",
+      paraQueSirve: "Para lanzar tu proyecto con una presencia digital coherente desde el día uno.",
       caracteristicas: [
-        "Diagnóstico profundo",
-        "Estrategia de marca",
-        "Web o landing profesional",
-        "CTA claro y efectivo",
-        "Recomendaciones de lanzamiento",
-        "Documento de próximos pasos",
-        "Propuesta de mantenimiento o ads"
+        "Web + estrategias de marketing",
+        "Mensaje y estructura optimizada",
+        "Configuración básica de captación de clientes",
+        "Preparado para crecer",
+        "Todo conectado en un mismo sistema"
       ],
       destacado: false,
       icon: MegaphoneIcon,
@@ -152,20 +148,41 @@ export default function ServiciosPage() {
                     </h2>
                   </div>
                   
-                  <p className="text-oscuro/70 mb-6">
-                    {servicio.descripcion}
-                  </p>
+                  {servicio.queEs && (
+                    <div className="mb-4">
+                      <h3 className="text-sm font-bold text-oscuro mb-1">Qué es</h3>
+                      <p className="text-oscuro/70">{servicio.queEs}</p>
+                    </div>
+                  )}
 
-                  <ul className="space-y-3 mb-8">
-                    {servicio.caracteristicas.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckIcon className={`w-5 h-5 ${iconColor} flex-shrink-0 mt-0.5`} />
-                        <span className="text-oscuro/80 text-sm">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {servicio.paraQueSirve && (
+                    <div className="mb-4">
+                      <h3 className="text-sm font-bold text-oscuro mb-1">Para qué sirve</h3>
+                      <p className="text-oscuro/70">{servicio.paraQueSirve}</p>
+                    </div>
+                  )}
+
+                  {servicio.descripcion && (
+                    <p className="text-oscuro/70 mb-6">
+                      {servicio.descripcion}
+                    </p>
+                  )}
+
+                  {servicio.caracteristicas && (
+                    <>
+                      <h3 className="text-sm font-bold text-oscuro mb-3">Características clave</h3>
+                      <ul className="space-y-3 mb-8">
+                        {servicio.caracteristicas.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <span className="text-oscuro/40 text-sm">—</span>
+                            <span className="text-oscuro/80 text-sm">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
 
                   {servicio.link ? (
                     <Link

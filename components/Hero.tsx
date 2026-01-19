@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video de fondo */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
@@ -22,53 +22,52 @@ export default function Hero() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 sm:pt-20">
-        <div className="max-w-5xl mx-auto space-y-10">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
           
-          {/* Título principal - Estilo Ideamos */}
+          {/* Título principal - Más grande y prominente */}
           <div className="animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight text-white mb-6">
               <span className="block">Expertos en crear sitios web</span>
               <span className="block">que atraen clientes y ventas</span>
             </h1>
-            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 leading-relaxed font-light">
               Diseño web y marketing de alto impacto
             </p>
           </div>
-
 
           {/* CTA Principal - Grande y centrado */}
           <div className="pt-4 animate-fade-in delay-400">
             <Link
               href="/contacto"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-sm sm:text-base"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-base sm:text-lg"
             >
               QUIERO UNA ASESORÍA DE MARKETING GRATUITA
-              <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           {/* Logos duales debajo del CTA */}
-          <div className="flex items-center justify-center gap-8 pt-8 animate-fade-in delay-600">
-            <div className="flex flex-col items-center opacity-90 hover:opacity-100 transition-opacity">
+          <div className="flex items-center justify-center gap-8 pt-6 animate-fade-in delay-600">
+            <div className="flex flex-col items-center transition-opacity">
               <Image
                 src="/logosinfondo.png"
                 alt="Estudio Nómade"
-                width={100}
-                height={100}
-                className="object-contain grayscale"
+                width={120}
+                height={120}
+                className="object-contain"
                 priority
               />
               <span className="text-xs font-semibold text-white/70 mt-2">DISEÑO & DESARROLLO</span>
             </div>
-            <div className="h-20 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
-            <div className="flex flex-col items-center opacity-90 hover:opacity-100 transition-opacity">
+            <div className="h-24 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
+            <div className="flex flex-col items-center transition-opacity">
               <Image
                 src="/LOGO GROVIA SIN FONDO.png"
                 alt="Grovia Marketing"
-                width={100}
-                height={100}
-                className="object-contain grayscale"
+                width={120}
+                height={120}
+                className="object-contain"
                 priority
               />
               <span className="text-xs font-semibold text-white/70 mt-2">MARKETING</span>

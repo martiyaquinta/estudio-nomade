@@ -13,14 +13,14 @@ export default function Portfolio() {
     },
     {
       nombre: "Cabalgatas GR Turismo",
-      tipo: "Landing Page",
+      tipo: "Web Institucional",
       año: 2025,
       url: "https://cabalgatas.grturismoaventura.com/",
       color: "from-orange to-orange-light"
     },
     {
       nombre: "Lo Saludable",
-      tipo: "Landing Page",
+      tipo: "Web Institucional",
       año: 2025,
       url: "https://losaludable.vercel.app/",
       color: "from-lavanda to-violeta"
