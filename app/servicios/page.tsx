@@ -162,12 +162,6 @@ export default function ServiciosPage() {
                     </div>
                   )}
 
-                  {servicio.descripcion && (
-                    <p className="text-oscuro/70 mb-6">
-                      {servicio.descripcion}
-                    </p>
-                  )}
-
                   {servicio.caracteristicas && (
                     <>
                       <h3 className="text-sm font-bold text-oscuro mb-3">Características clave</h3>
