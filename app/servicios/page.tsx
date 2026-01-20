@@ -186,12 +186,14 @@ export default function ServiciosPage() {
                       Crear invitación
                     </Link>
                   ) : (
-                    <Link
-                      href="/contacto"
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
                     >
                       Solicitar consultoría gratuita
-                    </Link>
+                    </a>
                   )}
                 </div>
               );

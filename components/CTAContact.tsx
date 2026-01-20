@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function CTAContact() {
@@ -25,13 +24,15 @@ export default function CTAContact() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-            <Link
-              href="/contacto"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-12 py-6 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-lg"
             >
               Solicitar consultoría gratuita
               <ArrowRightIcon className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
 
           <div className="pt-8 border-t border-white/10">

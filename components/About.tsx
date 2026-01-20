@@ -1,5 +1,4 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
 
 export default function About() {
   const problems = [
@@ -53,12 +52,14 @@ export default function About() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link
-            href="/contacto"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-xl text-lg"
           >
             QUIERO UNA ASESORÍA DE MARKETING GRATUITA
-          </Link>
+          </a>
         </div>
       </div>
     </section>

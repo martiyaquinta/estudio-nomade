@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
@@ -38,13 +37,15 @@ export default function Hero() {
 
           {/* CTA Principal - Grande y centrado */}
           <div className="pt-4 animate-fade-in delay-400">
-            <Link
-              href="/contacto"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 bg-orange text-white font-montserrat font-bold rounded-full hover:bg-orange-dark transition-all transform hover:scale-105 shadow-2xl hover:shadow-orange/50 text-base sm:text-lg"
             >
               QUIERO UNA ASESORÍA DE MARKETING GRATUITA
               <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
 
           {/* Logos duales debajo del CTA */}
