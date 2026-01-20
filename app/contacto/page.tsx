@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { EnvelopeIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
@@ -13,7 +12,6 @@ export default function ContactoPage() {
     mensaje: ""
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const validateForm = () => {
@@ -44,33 +42,19 @@ export default function ContactoPage() {
     
     if (!validateForm()) return;
 
-    setIsSubmitting(true);
-
-    try {
-      // Enviar email usando EmailJS
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        {
-          from_name: formData.nombre,
-          from_email: formData.email,
-          message: formData.mensaje,
-          to_email: 'estudionomade2025@gmail.com'
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-      );
-
-      setSubmitSuccess(true);
-      setFormData({ nombre: "", email: "", mensaje: "" });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (error) {
-      console.error('Error al enviar email:', error);
-      alert('Hubo un error al enviar el mensaje. Por favor intenta de nuevo.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Construir mensaje para WhatsApp
+    const mensaje = `Hola! Mi nombre es ${formData.nombre}%0A%0AEmail: ${formData.email}%0A%0AMensaje: ${formData.mensaje}`;
+    const whatsappUrl = `https://wa.me/5493885579898?text=${mensaje}`;
+    
+    // Abrir WhatsApp en nueva pestaña
+    window.open(whatsappUrl, '_blank');
+    
+    // Limpiar formulario
+    setFormData({ nombre: "", email: "", mensaje: "" });
+    setSubmitSuccess(true);
+    
+    // Reset success message after 5 seconds
+    setTimeout(() => setSubmitSuccess(false), 5000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -110,10 +94,10 @@ export default function ContactoPage() {
                 <CheckCircleIcon className="w-8 h-8 text-green-600 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-green-900 mb-1">
-                    ¡Mensaje enviado!
+                    ¡Redirigiendo a WhatsApp!
                   </h3>
                   <p className="text-green-700 text-sm">
-                    Gracias por contactarme. Te responderé lo antes posible.
+                    Se abrió una nueva ventana con tu mensaje. Si no se abrió automáticamente, haz clic en el botón de abajo.
                   </p>
                 </div>
               </div>
@@ -192,10 +176,9 @@ export default function ContactoPage() {
               {/* Botón */}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-violeta text-white font-semibold rounded-full hover:bg-violeta/90 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full px-6 py-4 bg-violeta text-white font-semibold rounded-full hover:bg-violeta/90 transition-all transform hover:scale-105"
               >
-                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                Enviar mensaje por WhatsApp
               </button>
             </form>
 
