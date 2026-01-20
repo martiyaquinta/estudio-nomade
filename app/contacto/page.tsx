@@ -44,7 +44,7 @@ export default function ContactoPage() {
 
     // Construir mensaje para WhatsApp
     const mensaje = `Hola! Mi nombre es ${formData.nombre}%0A%0AEmail: ${formData.email}%0A%0AMensaje: ${formData.mensaje}`;
-    const whatsappUrl = `https://wa.me/5493885579898?text=${mensaje}`;
+    const whatsappUrl = `https://wa.me/5492266515776?text=${mensaje}`;
     
     // Abrir WhatsApp en nueva pestaña
     window.open(whatsappUrl, '_blank');
