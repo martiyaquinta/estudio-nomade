@@ -1,9 +1,37 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
-import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, MegaphoneIcon } from "@heroicons/react/24/outline";
 
 export default function ServiciosPage() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    correo: '',
+    mensaje: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Número de WhatsApp (reemplazar con tu número)
+    const phoneNumber = '5492233491780'; // Formato: código país + número sin espacios
+    
+    // Construir el mensaje para WhatsApp
+    const mensaje = `*Nuevo contacto desde Estudio Nómade*%0A%0A*Nombre:* ${formData.nombre}%0A*Correo:* ${formData.correo}%0A*Mensaje:*%0A${formData.mensaje}`;
+    
+    // Abrir WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${mensaje}`, '_blank');
+    
+    // Limpiar formulario
+    setFormData({ nombre: '', correo: '', mensaje: '' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const servicios = [
     {
       nombre: "Landing Page",
@@ -34,22 +62,6 @@ export default function ServiciosPage() {
       destacado: false,
       icon: DevicePhoneMobileIcon,
       colores: "navy"
-    },
-    {
-      nombre: "Invitaciones Digitales / Páginas de Eventos",
-      queEs: "Piezas digitales interactivas para eventos, lanzamientos o celebraciones.",
-      paraQueSirve: "Para comunicar, invitar y organizar de forma simple, moderna y elegante.",
-      caracteristicas: [
-        "Diseño personalizado",
-        "Versión mobile first",
-        "Información clara y accesible",
-        "Posibilidad de confirmación de asistencia",
-        "Fácil de compartir"
-      ],
-      destacado: false,
-      icon: SparklesIcon,
-      colores: "lavanda",
-      link: "/admin"
     },
     {
       nombre: "Pack Lanzamiento (Ecommerce + estrategia de marketing)",
@@ -178,26 +190,87 @@ export default function ServiciosPage() {
                     </>
                   )}
 
-                  {servicio.link ? (
-                    <Link
-                      href={servicio.link}
-                      className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
-                    >
-                      Crear invitación
-                    </Link>
-                  ) : (
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
-                    >
-                      Solicitar consultoría gratuita
-                    </a>
-                  )}
+                  <button
+                    onClick={scrollToContact}
+                    className={`block w-full text-center px-6 py-3 font-semibold rounded-full transition-all transform hover:scale-105 ${buttonStyles}`}
+                  >
+                    Contactar
+                  </button>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Sección de Contacto */}
+      <section id="contacto" className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-display font-bold text-navy mb-4">
+                Contactanos
+              </h2>
+              <p className="text-xl text-oscuro/70">
+                Completá el formulario y nos pondremos en contacto por WhatsApp
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="bg-gradient-to-br from-lavanda/5 to-violeta/5 rounded-3xl p-8 border border-lavanda/20">
+              <div className="space-y-6">
+                <div>
+                  <label htmlFor="nombre" className="block text-sm font-semibold text-oscuro mb-2">
+                    Nombre completo *
+                  </label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    required
+                    value={formData.nombre}
+                    onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-violeta focus:ring-2 focus:ring-violeta/20 outline-none transition-all"
+                    placeholder="Tu nombre"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="correo" className="block text-sm font-semibold text-oscuro mb-2">
+                    Correo electrónico *
+                  </label>
+                  <input
+                    type="email"
+                    id="correo"
+                    required
+                    value={formData.correo}
+                    onChange={(e) => setFormData({ ...formData, correo: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-violeta focus:ring-2 focus:ring-violeta/20 outline-none transition-all"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="mensaje" className="block text-sm font-semibold text-oscuro mb-2">
+                    Mensaje *
+                  </label>
+                  <textarea
+                    id="mensaje"
+                    required
+                    rows={5}
+                    value={formData.mensaje}
+                    onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-violeta focus:ring-2 focus:ring-violeta/20 outline-none transition-all resize-none"
+                    placeholder="Contanos sobre tu proyecto..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-violeta text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-violeta/90 transition-all transform hover:scale-105 shadow-lg"
+                >
+                  Enviar a WhatsApp
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
