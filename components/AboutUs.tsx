@@ -31,7 +31,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <p className="text-oscuro/80 leading-relaxed text-lg">
-              Con el tiempo entendí que muchos negocios hacen esfuerzos constantes, pero sin una dirección clara. Para mí, el marketing no es solo una herramienta, es una forma de ordenar ideas, mensajes y decisiones. Me apasiona lo que hago y trabajo con quienes buscan crecer con criterio, no con promesas vacías.
+                Soy Valentín, técnico en marketing y actualmente estudiante de la Licenciatura en Marketing. Me formé en marketing digital con el objetivo de potenciar mi carrera y brindar un servicio profesional y responsable a mis clientes. Con el tiempo entendí que muchos negocios hacen esfuerzos constantes, pero sin una dirección clara. Para mí, el marketing no es solo una herramienta, es una forma de ordenar ideas, mensajes y decisiones. En un mundo lleno de información y estímulos, creo que el verdadero valor está en simplificar y enfocarse en lo que realmente importa. Desde esa mirada nace mi alianza con Estudio Nómade, con quien trabajamos para ofrecer un servicio integral. La idea es simple: crear recorridos claros y coherentes, y lograr que la experiencia de los usuarios sea diferente al resto. Me apasiona lo que hago y trabajo con quienes buscan crecer con criterio, no con promesas vacías.
               </p>
             </div>
 
