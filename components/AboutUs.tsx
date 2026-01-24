@@ -31,7 +31,9 @@ export default function AboutUs() {
                 </div>
               </div>
               <p className="text-oscuro/80 leading-relaxed text-lg">
-                Soy Valentín, técnico en marketing y actualmente estudiante de la Licenciatura en Marketing. Me formé en marketing digital con el objetivo de potenciar mi carrera y brindar un servicio profesional y responsable a mis clientes. En un mundo lleno de información y estímulos, creo que el verdadero valor está en simplificar y enfocarse en lo que realmente importa. Desde esa mirada nace mi alianza con Estudio Nómade, con quien trabajamos para ofrecer un servicio integral. La idea es simple: crear recorridos claros y coherentes, y lograr que la experiencia de los usuarios sea diferente al resto. 
+                Soy Valentín, técnico en marketing y actualmente estudiante de la Licenciatura en Marketing. Me formé en marketing digital con el objetivo de potenciar mi carrera y brindar un servicio profesional y responsable a mis clientes.
+                <p> En un mundo lleno de información y estímulos, creo que el verdadero valor está en simplificar y enfocarse en lo que realmente importa.</p>
+                <p> Desde esa mirada nace mi alianza con Estudio Nómade, con quien trabajamos para ofrecer un servicio integral. La idea es simple: crear recorridos claros y coherentes, y lograr que la experiencia de los usuarios sea diferente al resto. </p>
               </p>
             </div>
 
@@ -47,7 +49,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <p className="text-oscuro/80 leading-relaxed text-lg">
-                Soy Martina, creadora de Estudio Nómade x Grovia.
+                Soy Martina, creadora de Estudio Nómade. 
                 Actualmente estudio la Tecnicatura en Redes Informáticas y Telecomunicaciones y me dedico al diseño y desarrollo web.
                 <br /><br />
                 Creo sitios web para personas y marcas que quieren una presencia online clara, prolija y que funcione. Me gusta trabajar de forma cercana, entender cada proyecto y transformar ideas en páginas simples, lindas y útiles.
