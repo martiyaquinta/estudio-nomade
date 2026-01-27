@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon, X } from "@heroicons/react/24/outline";
+import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function ServiciosPage() {
   const [showModal, setShowModal] = useState(false);
@@ -238,7 +238,7 @@ export default function ServiciosPage() {
               onClick={() => setShowModal(false)}
               className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition"
             >
-              <X className="w-6 h-6 text-gray-600" />
+              <XMarkIcon className="w-6 h-6 text-gray-600" />
             </button>
 
             <div className="mb-6">
