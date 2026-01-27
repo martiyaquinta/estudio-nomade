@@ -1,15 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, MegaphoneIcon, X } from "@heroicons/react/24/outline";
 
 export default function ServiciosPage() {
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    descripcion: ''
+  });
+
   const handleInvitacionClick = () => {
+    setShowModal(true);
+  };
+
+  const handleSubmitInvitacion = (e: React.FormEvent) => {
+    e.preventDefault();
+    
     const phoneNumber = '5492233491780';
-    const mensaje = `Hola! Me interesa consultar por el servicio de *Invitaciones Digitales / Páginas de Eventos*`;
+    const mensaje = `*Consulta por Invitación Digital*%0A%0A*Nombre:* ${formData.nombre}%0A*Email:* ${formData.email}%0A*Descripción:*%0A${formData.descripcion}`;
+    
     window.open(`https://wa.me/${phoneNumber}?text=${mensaje}`, '_blank');
+    
+    // Cerrar modal y limpiar formulario
+    setShowModal(false);
+    setFormData({ nombre: '', email: '', descripcion: '' });
   };
 
   const handleContactClick = () => {
@@ -210,6 +229,92 @@ export default function ServiciosPage() {
           </div>
         </div>
       </section>
+
+      {/* Modal para Invitaciones Digitales */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-8 relative animate-fade-in">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+
+            <div className="mb-6">
+              <h3 className="text-3xl font-display font-bold text-navy mb-2">
+                Invitaciones Digitales
+              </h3>
+              <p className="text-oscuro/70">
+                Completá tus datos y te contactaremos por WhatsApp
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmitInvitacion} className="space-y-6">
+              <div>
+                <label htmlFor="nombre" className="block text-sm font-semibold text-oscuro mb-2">
+                  Nombre completo *
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  required
+                  value={formData.nombre}
+                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-lavanda focus:ring-2 focus:ring-lavanda/20 outline-none transition-all"
+                  placeholder="Tu nombre"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-oscuro mb-2">
+                  Correo electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-lavanda focus:ring-2 focus:ring-lavanda/20 outline-none transition-all"
+                  placeholder="tu@email.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="descripcion" className="block text-sm font-semibold text-oscuro mb-2">
+                  Descripción de la invitación *
+                </label>
+                <textarea
+                  id="descripcion"
+                  required
+                  rows={4}
+                  value={formData.descripcion}
+                  onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl border border-oscuro/20 focus:border-lavanda focus:ring-2 focus:ring-lavanda/20 outline-none transition-all resize-none"
+                  placeholder="Contanos qué tipo de invitación necesitás (boda, cumpleaños, evento, etc.) y qué estilo tenés en mente..."
+                />
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-all"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 px-6 py-3 bg-lavanda text-white rounded-full font-semibold hover:bg-lavanda/90 transition-all transform hover:scale-105 shadow-lg"
+                >
+                  Enviar a WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </main>
