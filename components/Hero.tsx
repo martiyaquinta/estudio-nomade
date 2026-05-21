@@ -1,22 +1,49 @@
 import type { CSSProperties } from "react";
 
-/* ── Constelación de valores ────────────────────────────────────────
-   Desktop: viewBox 600×520  → posición % = (cx/600, cy/520)
-   Mobile:  viewBox 320×560  → posición % = (mcx/320, mcy/560)
-   Cada tarjeta flota con fd/fdelay únicos para movimiento orgánico.
-─────────────────────────────────────────────────────────────────── */
+/*
+  ── GEOMETRÍA ────────────────────────────────────────────────────────
+  Heptágono regular con Confianza en el centro.
+  Desktop:  viewBox 0 0 600 520  | centro (300, 260) | radio 190
+  Mobile:   viewBox 0 0 320 520  | centro (160, 250) | radio 105
+
+  Ángulo inicial: -90° (vértice 0 arriba).
+  Paso entre vértices: 360/7 ≈ 51.43°
+
+  Desktop vértices (calculados):
+    0 Innovación:      (300, 70)
+    1 Creatividad:     (449, 142)
+    2 Estrategia:      (485, 302)
+    3 Marketing:       (382, 431)
+    4 Resultados:      (218, 431)
+    5 Profesionalismo: (115, 302)
+    6 Calidad:         (151, 142)
+    C Confianza:       (300, 260)  ← centro
+
+  Mobile vértices (radio 105, centro 160,250):
+    0 Innovación:      (160, 145)
+    1 Creatividad:     (242, 185)
+    2 Estrategia:      (262, 273)
+    3 Marketing:       (206, 345)
+    4 Resultados:      (115, 345)
+    5 Profesionalismo:  (58, 273)
+    6 Calidad:          (78, 185)
+    C Confianza:       (160, 250)  ← centro
+  ─────────────────────────────────────────────────────────────────── */
+
 const VALUES = [
-  { label: "Innovación",      cx: 300, cy:  40, mcx: 160, mcy:  45, main: false, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
-  { label: "Creatividad",     cx:  90, cy: 155, mcx:  74, mcy: 140, main: false, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
-  { label: "Estrategia",      cx: 490, cy: 155, mcx: 248, mcy: 140, main: false, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
-  { label: "Confianza",       cx: 300, cy: 268, mcx: 160, mcy: 248, main: true,  delay: "cc-d3", fd: "6.0s", fdelay: "0.4s" },
-  { label: "Marketing",       cx: 100, cy: 370, mcx:  65, mcy: 358, main: false, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
-  { label: "Resultados",      cx: 490, cy: 370, mcx: 255, mcy: 358, main: false, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
-  { label: "Profesionalismo", cx: 185, cy: 470, mcx: 100, mcy: 468, main: false, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
-  { label: "Calidad",         cx: 400, cy: 470, mcx: 225, mcy: 468, main: false, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
+  /* Centro — Confianza */
+  { label: "Confianza",       cx: 300, cy: 260, mcx: 160, mcy: 250, main: true,  delay: "cc-d3", fd: "6.0s", fdelay: "0.4s" },
+  /* Vértices del heptágono, horario desde arriba */
+  { label: "Innovación",      cx: 300, cy:  70, mcx: 160, mcy: 145, main: false, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
+  { label: "Creatividad",     cx: 449, cy: 142, mcx: 242, mcy: 185, main: false, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
+  { label: "Estrategia",      cx: 485, cy: 302, mcx: 262, mcy: 273, main: false, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
+  { label: "Marketing",       cx: 382, cy: 431, mcx: 206, mcy: 345, main: false, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
+  { label: "Resultados",      cx: 218, cy: 431, mcx: 115, mcy: 345, main: false, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
+  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  58, mcy: 273, main: false, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
+  { label: "Calidad",         cx: 151, cy: 142, mcx:  78, mcy: 185, main: false, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
 ];
 
-/* Estilos compartidos de tarjeta para reutilizar */
+/* Estilo de tarjeta reutilizable */
 const cardStyle = (main: boolean, sm = false): CSSProperties => ({
   padding: main ? (sm ? "10px 18px" : "14px 28px") : (sm ? "7px 13px" : "10px 22px"),
   background: "var(--card-bg)",
@@ -29,7 +56,7 @@ const cardStyle = (main: boolean, sm = false): CSSProperties => ({
   userSelect: "none",
   boxShadow: main
     ? "0 0 40px rgba(120,60,255,0.35), 0 0 80px rgba(120,60,255,0.15)"
-    : "0 0 16px rgba(120,60,255,0.1)",
+    : "0 0 12px rgba(120,60,255,0.1)",
 });
 
 const labelStyle = (main: boolean, sm = false): CSSProperties => ({
@@ -39,6 +66,129 @@ const labelStyle = (main: boolean, sm = false): CSSProperties => ({
   fontFamily: "var(--font-syne), sans-serif",
   display: "block",
 });
+
+/* ── Polígono SVG y radios reutilizables ── */
+function DesktopSVG() {
+  /* Radios: Confianza(300,260) → cada vértice */
+  const radios = [
+    { x1: 300, y1: 260, x2: 300, y2:  70, d: "0.5s" },
+    { x1: 300, y1: 260, x2: 449, y2: 142, d: "0.7s" },
+    { x1: 300, y1: 260, x2: 485, y2: 302, d: "0.9s" },
+    { x1: 300, y1: 260, x2: 382, y2: 431, d: "1.1s" },
+    { x1: 300, y1: 260, x2: 218, y2: 431, d: "1.1s" },
+    { x1: 300, y1: 260, x2: 115, y2: 302, d: "0.9s" },
+    { x1: 300, y1: 260, x2: 151, y2: 142, d: "0.7s" },
+  ];
+  /* Vértices del heptágono */
+  const vertices = [[300,70],[449,142],[485,302],[382,431],[218,431],[115,302],[151,142]];
+
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 600 520"
+      preserveAspectRatio="xMidYMid meet"
+      style={{ overflow: "visible" }}
+      aria-hidden="true"
+    >
+      {/* Relleno muy sutil del polígono (aparece inmediatamente) */}
+      <polygon
+        points={vertices.map(([x,y]) => `${x},${y}`).join(" ")}
+        fill="rgba(120,60,255,0.04)"
+        stroke="none"
+      />
+
+      {/* Radios (spoke lines) con draw-in animation */}
+      {radios.map((r, i) => (
+        <line
+          key={i}
+          x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}
+          className="svg-line"
+          stroke="rgba(120,60,255,0.35)"
+          strokeWidth="1"
+          style={{ animationDelay: r.d }}
+        />
+      ))}
+
+      {/* Heptágono exterior — se dibuja último */}
+      <polygon
+        points={vertices.map(([x,y]) => `${x},${y}`).join(" ")}
+        className="svg-line"
+        stroke="rgba(120,60,255,0.45)"
+        strokeWidth="1.5"
+        fill="none"
+        style={{ animationDelay: "1.5s" }}
+      />
+
+      {/* Puntos naranjas en cada vértice */}
+      {vertices.map(([x,y], i) => (
+        <circle key={i} cx={x} cy={y} r="3.5" fill="#E8470A" opacity="0.9" />
+      ))}
+
+      {/* Glow difuso en el centro */}
+      <circle cx="300" cy="260" r="22" fill="rgba(120,60,255,0.08)" />
+    </svg>
+  );
+}
+
+function MobileSVG() {
+  const radios = [
+    { x1: 160, y1: 250, x2: 160, y2: 145, d: "0.5s" },
+    { x1: 160, y1: 250, x2: 242, y2: 185, d: "0.7s" },
+    { x1: 160, y1: 250, x2: 262, y2: 273, d: "0.9s" },
+    { x1: 160, y1: 250, x2: 206, y2: 345, d: "1.1s" },
+    { x1: 160, y1: 250, x2: 115, y2: 345, d: "1.1s" },
+    { x1: 160, y1: 250, x2:  58, y2: 273, d: "0.9s" },
+    { x1: 160, y1: 250, x2:  78, y2: 185, d: "0.7s" },
+  ];
+  const vertices = [[160,145],[242,185],[262,273],[206,345],[115,345],[58,273],[78,185]];
+
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 320 520"
+      preserveAspectRatio="xMidYMid meet"
+      style={{ overflow: "visible" }}
+      aria-hidden="true"
+    >
+      {/* Relleno sutil */}
+      <polygon
+        points={vertices.map(([x,y]) => `${x},${y}`).join(" ")}
+        fill="rgba(120,60,255,0.04)"
+        stroke="none"
+      />
+
+      {/* Radios */}
+      {radios.map((r, i) => (
+        <line
+          key={i}
+          x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}
+          className="svg-line"
+          stroke="rgba(120,60,255,0.4)"
+          strokeWidth="1"
+          style={{ animationDelay: r.d }}
+        />
+      ))}
+
+      {/* Heptágono exterior */}
+      <polygon
+        points={vertices.map(([x,y]) => `${x},${y}`).join(" ")}
+        className="svg-line"
+        stroke="rgba(120,60,255,0.5)"
+        strokeWidth="1.5"
+        fill="none"
+        style={{ animationDelay: "1.5s" }}
+      />
+
+      {/* Puntos naranjas */}
+      {vertices.map(([x,y], i) => (
+        <circle key={i} cx={x} cy={y} r="3" fill="#E8470A" opacity="0.9" />
+      ))}
+
+      {/* Glow centro */}
+      <circle cx="160" cy="250" r="14" fill="rgba(120,60,255,0.08)" />
+    </svg>
+  );
+}
 
 export default function Hero() {
   return (
@@ -55,7 +205,7 @@ export default function Hero() {
       <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="flex flex-col lg:grid lg:grid-cols-[45fr_55fr] gap-12 lg:gap-16 items-center min-h-[80vh]">
 
-          {/* ══ COLUMNA IZQUIERDA — TEXTO ════════════════════════ */}
+          {/* ══ TEXTO IZQUIERDA ════════════════════════════════ */}
           <div className="flex flex-col gap-7">
             <p className="hero-label flex items-center gap-3">
               <span className="flex-shrink-0 h-px w-8" style={{ background: "var(--accent-orange)" }} />
@@ -93,42 +243,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ══ DESKTOP — Constelación horizontal ════════════════ */}
+          {/* ══ DESKTOP — heptágono horizontal ════════════════ */}
           <div className="hidden lg:block w-full">
-            <div className="relative w-full" style={{ aspectRatio: "600 / 520", overflow: "visible" }}>
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 600 520"
-                preserveAspectRatio="xMidYMid meet"
-                style={{ overflow: "visible" }}
-                aria-hidden="true"
-              >
-                {/* Líneas principales → Confianza */}
-                <path d="M 300 40 C 300 130 300 200 300 268"  className="svg-line line-d0" stroke="rgba(120,60,255,0.35)" strokeWidth="1.5" fill="none"/>
-                <path d="M 90 155 C 160 190 230 225 300 268"  className="svg-line line-d1" stroke="rgba(120,60,255,0.35)" strokeWidth="1.5" fill="none"/>
-                <path d="M 490 155 C 430 190 370 225 300 268" className="svg-line line-d2" stroke="rgba(120,60,255,0.35)" strokeWidth="1.5" fill="none"/>
-                <path d="M 100 370 C 170 335 235 300 300 268" className="svg-line line-d3" stroke="rgba(120,60,255,0.35)" strokeWidth="1.5" fill="none"/>
-                <path d="M 490 370 C 425 335 360 300 300 268" className="svg-line line-d4" stroke="rgba(120,60,255,0.35)" strokeWidth="1.5" fill="none"/>
-                {/* Líneas secundarias */}
-                <path d="M 300 40 C 200 90 145 120 90 155"    className="svg-line line-d1" stroke="rgba(120,60,255,0.2)" strokeWidth="1" fill="none"/>
-                <path d="M 300 40 C 390 80 445 120 490 155"   className="svg-line line-d2" stroke="rgba(120,60,255,0.2)" strokeWidth="1" fill="none"/>
-                <path d="M 185 470 C 155 435 125 400 100 370" className="svg-line line-d3" stroke="rgba(120,60,255,0.2)" strokeWidth="1" fill="none"/>
-                <path d="M 400 470 C 440 435 465 400 490 370" className="svg-line line-d4" stroke="rgba(120,60,255,0.2)" strokeWidth="1" fill="none"/>
-                {/* Puntos naranjas */}
-                <circle cx="300" cy="154" r="3.5" fill="#E8470A" opacity="0.9"/>
-                <circle cx="197" cy="215" r="3"   fill="#E8470A" opacity="0.8"/>
-                <circle cx="400" cy="215" r="3"   fill="#E8470A" opacity="0.8"/>
-                <circle cx="198" cy="322" r="3"   fill="#E8470A" opacity="0.8"/>
-                <circle cx="393" cy="322" r="3"   fill="#E8470A" opacity="0.8"/>
-              </svg>
+            <div
+              className="relative w-full"
+              style={{ aspectRatio: "600 / 520", overflow: "visible" }}
+            >
+              <DesktopSVG />
 
               {VALUES.map((v) => (
                 <div
                   key={v.label}
                   className={`constellation-card ${v.delay} absolute`}
-                  style={{ left: `${(v.cx/600)*100}%`, top: `${(v.cy/520)*100}%`, transform: "translate(-50%,-50%)", zIndex: v.main ? 2 : 1 }}
+                  style={{
+                    left: `${(v.cx / 600) * 100}%`,
+                    top:  `${(v.cy / 520) * 100}%`,
+                    transform: "translate(-50%, -50%)",
+                    zIndex: v.main ? 2 : 1,
+                  }}
                 >
-                  <div className="float-card" style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}>
+                  <div
+                    className="float-card"
+                    style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}
+                  >
                     <div style={cardStyle(v.main)}>
                       <span style={labelStyle(v.main)}>{v.label}</span>
                     </div>
@@ -138,61 +275,33 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ══ MOBILE — Constelación vertical (portrait 320×560) ═ */}
+          {/* ══ MOBILE — heptágono portrait ════════════════════ */}
           <div className="lg:hidden w-full mt-2">
-            {/*
-              Contenedor con aspect-ratio portrait para que los %
-              de posición encajen exactamente con el viewBox del SVG.
-            */}
             <div
               className="relative mx-auto"
               style={{
                 width: "min(100%, 340px)",
-                aspectRatio: "320 / 560",
+                aspectRatio: "320 / 520",
                 overflow: "visible",
               }}
             >
-              {/* SVG de conexiones mobile */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 320 560"
-                preserveAspectRatio="xMidYMid meet"
-                style={{ overflow: "visible" }}
-                aria-hidden="true"
-              >
-                {/* Líneas principales → Confianza (160, 248) */}
-                <path d="M 160 45 C 160 130 160 195 160 248"   className="svg-line line-d0" stroke="rgba(120,60,255,0.4)"  strokeWidth="1.5" fill="none"/>
-                <path d="M 74 140 C 105 185 133 218 160 248"   className="svg-line line-d1" stroke="rgba(120,60,255,0.4)"  strokeWidth="1.5" fill="none"/>
-                <path d="M 248 140 C 220 185 192 218 160 248"  className="svg-line line-d2" stroke="rgba(120,60,255,0.4)"  strokeWidth="1.5" fill="none"/>
-                <path d="M 65 358 C 96 315 127 278 160 248"    className="svg-line line-d3" stroke="rgba(120,60,255,0.4)"  strokeWidth="1.5" fill="none"/>
-                <path d="M 255 358 C 224 315 194 278 160 248"  className="svg-line line-d4" stroke="rgba(120,60,255,0.4)"  strokeWidth="1.5" fill="none"/>
-                {/* Líneas secundarias */}
-                <path d="M 160 45 C 122 88 98 112 74 140"      className="svg-line line-d1" stroke="rgba(120,60,255,0.2)"  strokeWidth="1"   fill="none"/>
-                <path d="M 160 45 C 196 88 222 112 248 140"    className="svg-line line-d2" stroke="rgba(120,60,255,0.2)"  strokeWidth="1"   fill="none"/>
-                <path d="M 100 468 C 88 432 76 396 65 358"     className="svg-line line-d3" stroke="rgba(120,60,255,0.2)"  strokeWidth="1"   fill="none"/>
-                <path d="M 225 468 C 237 432 248 396 255 358"  className="svg-line line-d4" stroke="rgba(120,60,255,0.2)"  strokeWidth="1"   fill="none"/>
-                {/* Puntos naranjas en intersecciones */}
-                <circle cx="160" cy="146" r="3"   fill="#E8470A" opacity="0.9"/>
-                <circle cx="117" cy="194" r="2.5" fill="#E8470A" opacity="0.8"/>
-                <circle cx="204" cy="194" r="2.5" fill="#E8470A" opacity="0.8"/>
-                <circle cx="112" cy="303" r="2.5" fill="#E8470A" opacity="0.8"/>
-                <circle cx="207" cy="303" r="2.5" fill="#E8470A" opacity="0.8"/>
-              </svg>
+              <MobileSVG />
 
-              {/* Tarjetas mobile flotantes */}
               {VALUES.map((v) => (
                 <div
                   key={v.label}
                   className={`constellation-card ${v.delay} absolute`}
                   style={{
                     left: `${(v.mcx / 320) * 100}%`,
-                    top:  `${(v.mcy / 560) * 100}%`,
+                    top:  `${(v.mcy / 520) * 100}%`,
                     transform: "translate(-50%, -50%)",
                     zIndex: v.main ? 2 : 1,
                   }}
                 >
-                  <div className="float-card" style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}>
-                    {/* Estilo compacto para mobile (sm=true) */}
+                  <div
+                    className="float-card"
+                    style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}
+                  >
                     <div style={cardStyle(v.main, true)}>
                       <span style={labelStyle(v.main, true)}>{v.label}</span>
                     </div>
