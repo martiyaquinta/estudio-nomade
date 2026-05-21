@@ -20,14 +20,15 @@ import type { CSSProperties } from "react";
   6 Calidad         (151, 142)   ( 90, 168)
   ─────────────────────────────────────────────────────────────────── */
 
+// Mobile viewBox 400×460 | centro (210, 240) | radio 150
 const VALUES = [
-  { label: "Innovación",      cx: 300, cy:  70, mcx: 180, mcy: 125, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
-  { label: "Creatividad",     cx: 449, cy: 142, mcx: 270, mcy: 168, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
-  { label: "Estrategia",      cx: 485, cy: 302, mcx: 292, mcy: 266, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
-  { label: "Marketing",       cx: 382, cy: 431, mcx: 230, mcy: 344, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
-  { label: "Resultados",      cx: 218, cy: 431, mcx: 130, mcy: 344, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
-  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  68, mcy: 266, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
-  { label: "Calidad",         cx: 151, cy: 142, mcx:  90, mcy: 168, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
+  { label: "Innovación",      cx: 300, cy:  70, mcx: 210, mcy:  90, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
+  { label: "Creatividad",     cx: 449, cy: 142, mcx: 327, mcy: 146, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
+  { label: "Estrategia",      cx: 485, cy: 302, mcx: 357, mcy: 273, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
+  { label: "Marketing",       cx: 382, cy: 431, mcx: 275, mcy: 375, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
+  { label: "Resultados",      cx: 218, cy: 431, mcx: 145, mcy: 375, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
+  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  64, mcy: 273, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
+  { label: "Calidad",         cx: 151, cy: 142, mcx:  93, mcy: 146, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
 ];
 
 const cardStyle = (sm = false): CSSProperties => ({
@@ -98,24 +99,24 @@ function DesktopSVG() {
   );
 }
 
-/* ── SVG mobile: misma geometría en portrait 360×440 ── */
+/* ── SVG mobile: geometría en portrait 400×460, radio 150 ── */
 function MobileSVG() {
-  // Centro (180, 240) → cada vértice
+  // Centro (210, 240) → cada vértice  radio=150
   const spokes = [
-    { x2: 180, y2: 125, d: "0.5s" },
-    { x2: 270, y2: 168, d: "0.7s" },
-    { x2: 292, y2: 266, d: "0.9s" },
-    { x2: 230, y2: 344, d: "1.1s" },
-    { x2: 130, y2: 344, d: "1.1s" },
-    { x2:  68, y2: 266, d: "0.9s" },
-    { x2:  90, y2: 168, d: "0.7s" },
+    { x2: 210, y2:  90, d: "0.5s" },
+    { x2: 327, y2: 146, d: "0.7s" },
+    { x2: 357, y2: 273, d: "0.9s" },
+    { x2: 275, y2: 375, d: "1.1s" },
+    { x2: 145, y2: 375, d: "1.1s" },
+    { x2:  64, y2: 273, d: "0.9s" },
+    { x2:  93, y2: 146, d: "0.7s" },
   ];
   const vertices = spokes.map((s) => [s.x2, s.y2]);
 
   return (
     <svg
       className="absolute inset-0 w-full h-full pointer-events-none"
-      viewBox="0 0 360 440"
+      viewBox="0 0 400 460"
       preserveAspectRatio="xMidYMid meet"
       style={{ overflow: "visible" }}
       aria-hidden="true"
@@ -124,23 +125,23 @@ function MobileSVG() {
       {spokes.map((s, i) => (
         <line
           key={i}
-          x1={180} y1={240}
+          x1={210} y1={240}
           x2={s.x2} y2={s.y2}
           className="svg-line"
           stroke="rgba(120,60,255,0.45)"
-          strokeWidth="1.2"
+          strokeWidth="1.5"
           style={{ animationDelay: s.d }}
         />
       ))}
 
       {/* Puntos naranjas */}
       {vertices.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3" fill="#E8470A" opacity="0.9" />
+        <circle key={i} cx={x} cy={y} r="3.5" fill="#E8470A" opacity="0.9" />
       ))}
 
       {/* Glow en el centro */}
-      <circle cx="180" cy="240" r="5"  fill="rgba(120,60,255,0.3)"  />
-      <circle cx="180" cy="240" r="14" fill="rgba(120,60,255,0.08)" />
+      <circle cx="210" cy="240" r="6"  fill="rgba(120,60,255,0.3)"  />
+      <circle cx="210" cy="240" r="18" fill="rgba(120,60,255,0.08)" />
     </svg>
   );
 }
@@ -226,10 +227,9 @@ export default function Hero() {
 
           {/* ══ MOBILE — estrella abierta en portrait ══════════ */}
           <div className="lg:hidden w-full mt-2">
-            {/* Sin max-width: ocupa todo el ancho disponible */}
             <div
               className="relative w-full"
-              style={{ aspectRatio: "360 / 440", overflow: "visible" }}
+              style={{ aspectRatio: "400 / 460", overflow: "visible" }}
             >
               <MobileSVG />
               {VALUES.map((v) => (
@@ -237,8 +237,8 @@ export default function Hero() {
                   key={v.label}
                   className={`constellation-card ${v.delay} absolute`}
                   style={{
-                    left: `${(v.mcx / 360) * 100}%`,
-                    top:  `${(v.mcy / 440) * 100}%`,
+                    left: `${(v.mcx / 400) * 100}%`,
+                    top:  `${(v.mcy / 460) * 100}%`,
                     transform: "translate(-50%, -50%)",
                   }}
                 >
