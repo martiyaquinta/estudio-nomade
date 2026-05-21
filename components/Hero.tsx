@@ -20,17 +20,15 @@ import type { CSSProperties } from "react";
   6 Calidad         (151, 142)   ( 90, 168)
   ─────────────────────────────────────────────────────────────────── */
 
-// Mobile viewBox 450×460 | centro (230, 240) | radio 150
-// Centro desplazado para que Profesionalismo (izq) y Estrategia (der)
-// no se corten en pantallas estrechas (~343px de ancho útil).
+// Mobile viewBox 480×480 | centro (245, 245) | radio 160
 const VALUES = [
-  { label: "Innovación",      cx: 300, cy:  70, mcx: 230, mcy:  90, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
-  { label: "Creatividad",     cx: 449, cy: 142, mcx: 347, mcy: 146, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
-  { label: "Estrategia",      cx: 485, cy: 302, mcx: 376, mcy: 273, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
-  { label: "Marketing",       cx: 382, cy: 431, mcx: 295, mcy: 375, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
-  { label: "Resultados",      cx: 218, cy: 431, mcx: 165, mcy: 375, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
-  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  84, mcy: 273, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
-  { label: "Calidad",         cx: 151, cy: 142, mcx: 113, mcy: 146, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
+  { label: "Innovación",      cx: 300, cy:  70, mcx: 245, mcy:  85, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
+  { label: "Creatividad",     cx: 449, cy: 142, mcx: 370, mcy: 145, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
+  { label: "Estrategia",      cx: 485, cy: 302, mcx: 401, mcy: 281, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
+  { label: "Marketing",       cx: 382, cy: 431, mcx: 314, mcy: 389, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
+  { label: "Resultados",      cx: 218, cy: 431, mcx: 176, mcy: 389, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
+  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  89, mcy: 281, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
+  { label: "Calidad",         cx: 151, cy: 142, mcx: 120, mcy: 145, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
 ];
 
 const cardStyle = (sm = false): CSSProperties => ({
@@ -101,32 +99,31 @@ function DesktopSVG() {
   );
 }
 
-/* ── SVG mobile: geometría en portrait 450×460 | centro (230,240) | radio 150 ── */
+/* ── SVG mobile: 480×480 | centro (245,245) | radio 160 ── */
 function MobileSVG() {
   const spokes = [
-    { x2: 230, y2:  90, d: "0.5s" },
-    { x2: 347, y2: 146, d: "0.7s" },
-    { x2: 376, y2: 273, d: "0.9s" },
-    { x2: 295, y2: 375, d: "1.1s" },
-    { x2: 165, y2: 375, d: "1.1s" },
-    { x2:  84, y2: 273, d: "0.9s" },
-    { x2: 113, y2: 146, d: "0.7s" },
+    { x2: 245, y2:  85, d: "0.5s" },
+    { x2: 370, y2: 145, d: "0.7s" },
+    { x2: 401, y2: 281, d: "0.9s" },
+    { x2: 314, y2: 389, d: "1.1s" },
+    { x2: 176, y2: 389, d: "1.1s" },
+    { x2:  89, y2: 281, d: "0.9s" },
+    { x2: 120, y2: 145, d: "0.7s" },
   ];
   const vertices = spokes.map((s) => [s.x2, s.y2]);
 
   return (
     <svg
       className="absolute inset-0 w-full h-full pointer-events-none"
-      viewBox="0 0 450 460"
+      viewBox="0 0 480 480"
       preserveAspectRatio="xMidYMid meet"
       style={{ overflow: "visible" }}
       aria-hidden="true"
     >
-      {/* Radios */}
       {spokes.map((s, i) => (
         <line
           key={i}
-          x1={230} y1={240}
+          x1={245} y1={245}
           x2={s.x2} y2={s.y2}
           className="svg-line"
           stroke="rgba(120,60,255,0.45)"
@@ -134,15 +131,11 @@ function MobileSVG() {
           style={{ animationDelay: s.d }}
         />
       ))}
-
-      {/* Puntos naranjas */}
       {vertices.map(([x, y], i) => (
         <circle key={i} cx={x} cy={y} r="3.5" fill="#E8470A" opacity="0.9" />
       ))}
-
-      {/* Glow en el centro */}
-      <circle cx="230" cy="240" r="6"  fill="rgba(120,60,255,0.3)"  />
-      <circle cx="230" cy="240" r="18" fill="rgba(120,60,255,0.08)" />
+      <circle cx="245" cy="245" r="6"  fill="rgba(120,60,255,0.3)"  />
+      <circle cx="245" cy="245" r="18" fill="rgba(120,60,255,0.08)" />
     </svg>
   );
 }
@@ -230,7 +223,7 @@ export default function Hero() {
           <div className="lg:hidden w-full mt-2">
             <div
               className="relative w-full"
-              style={{ aspectRatio: "450 / 460", overflow: "visible" }}
+              style={{ aspectRatio: "480 / 480", overflow: "visible" }}
             >
               <MobileSVG />
               {VALUES.map((v) => (
@@ -238,8 +231,8 @@ export default function Hero() {
                   key={v.label}
                   className={`constellation-card ${v.delay} absolute`}
                   style={{
-                    left: `${(v.mcx / 450) * 100}%`,
-                    top:  `${(v.mcy / 460) * 100}%`,
+                    left: `${(v.mcx / 480) * 100}%`,
+                    top:  `${(v.mcy / 480) * 100}%`,
                     transform: "translate(-50%, -50%)",
                   }}
                 >
