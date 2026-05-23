@@ -26,6 +26,14 @@ const proyectos = [
     url: "https://losaludable.vercel.app/",
     descripcion: "Web institucional con múltiples secciones para servicio de comida saludable",
   },
+  {
+    id: 4,
+    nombre: "Kumelen Running",
+    tipo: "landing page",
+    año: 2026,
+    url: "https://kumelen.vercel.app/",
+    descripcion: "Landing page para gimnasio enfocado en running.",
+  },
 ];
 
 export default function ProyectosPage() {
