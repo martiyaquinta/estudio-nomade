@@ -56,11 +56,11 @@ const servicios = [
     icon: SparklesIcon,
   },
   {
-    nombre: "Pack Lanzamiento (Ecommerce + estrategia de marketing)",
+    nombre: "E-commerce",
     queEs: "Un sistema inicial para salir al mundo con una marca sólida y funcional.",
     paraQueSirve: "Para lanzar tu proyecto con una presencia digital coherente desde el día uno.",
     caracteristicas: [
-      "Web + estrategias de marketing",
+      "Tienda online automáticamente integrada a tu web",
       "Mensaje y estructura optimizada",
       "Configuración básica de captación de clientes",
       "Preparado para crecer",
