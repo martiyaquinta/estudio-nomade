@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function CTAContact() {
@@ -60,11 +61,49 @@ export default function CTAContact() {
 
           {/* Subtítulo */}
           <p
-            className="text-lg max-w-xl mx-auto mb-12 leading-[1.75]"
+            className="text-lg max-w-xl mx-auto mb-10 leading-[1.75]"
             style={{ color: "var(--text-muted)" }}
           >
             Agenda una consultoría gratuita y descubre cómo podemos ayudarte a crecer
           </p>
+
+          {/* Foto equipo */}
+          <div className="flex justify-center mb-12">
+            <div
+              className="relative rounded-2xl overflow-hidden"
+              style={{
+                width: "min(520px, 90vw)",
+                border: "1px solid rgba(18,64,170,0.30)",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.50), 0 0 80px rgba(18,64,170,0.12)",
+              }}
+            >
+              <Image
+                src="/socios1.png"
+                alt="Valentín y Martina, equipo de Grovia"
+                width={1040}
+                height={693}
+                className="w-full h-auto object-cover"
+                style={{ maxHeight: "320px", objectPosition: "center 25%" }}
+              />
+              <div
+                className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+                style={{
+                  background: "linear-gradient(to top, rgba(5,10,30,0.75) 0%, transparent 100%)",
+                }}
+              />
+              <div
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap"
+                style={{
+                  background: "rgba(5,10,30,0.80)",
+                  border: "1px solid rgba(18,64,170,0.35)",
+                  backdropFilter: "blur(12px)",
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#4ade80" }} />
+                <span className="text-white text-xs font-bold tracking-wider">Valentín & Martina · Grovia</span>
+              </div>
+            </div>
+          </div>
 
           {/* CTA principal */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
