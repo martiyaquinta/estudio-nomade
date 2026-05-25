@@ -98,7 +98,7 @@ export default function ServiciosPage() {
             <p className="flex items-center justify-center gap-3 mb-6">
               <span className="h-px w-8 flex-shrink-0" style={{ background: "var(--accent-orange)" }} />
               <span className="text-[11px] font-medium tracking-[0.18em] uppercase" style={{ color: "var(--accent-orange)" }}>
-                DESARROLLO WEB & MARKETING
+                GROVIA · MARKETING ESTRATÉGICO & DESARROLLO WEB
               </span>
               <span className="h-px w-8 flex-shrink-0" style={{ background: "var(--accent-orange)" }} />
             </p>
@@ -106,7 +106,7 @@ export default function ServiciosPage() {
               Servicios
             </h1>
             <p className="text-lg mb-6" style={{ color: "var(--text-gray)" }}>
-              Desarrollo web + Estrategia de marketing
+              Todo lo que tu negocio necesita para crecer online, en un solo equipo.
             </p>
             <span
               className="inline-block px-6 py-2.5 text-sm font-semibold rounded-full"

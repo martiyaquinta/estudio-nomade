@@ -17,32 +17,33 @@ export default function TrustedBy() {
       className="py-20"
       style={{
         background: "var(--bg-primary)",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        borderTop:    "1px solid var(--line)",
+        borderBottom: "1px solid var(--line)",
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Label */}
         <p
-          className="text-center mb-10 text-[11px] font-medium tracking-[0.25em] uppercase"
-          style={{ color: "var(--text-gray)" }}
+          className="text-center mb-12 text-[10px] font-bold tracking-[0.30em] uppercase"
+          style={{ color: "var(--text-dim)" }}
         >
           TRABAJAMOS CON
         </p>
 
-        {/* Clientes en fila horizontal */}
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
+        {/* Clientes */}
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-5 max-w-5xl mx-auto">
           {clients.map((client, index) => (
             <span
               key={index}
-              className="font-display font-semibold text-sm tracking-[0.12em] transition-colors duration-200 hover:text-white"
-              style={{ color: "var(--text-gray)" }}
+              className="font-display font-bold text-xs tracking-[0.18em] transition-colors duration-200 hover:text-white cursor-default"
+              style={{ color: "rgba(255,255,255,0.22)" }}
             >
               {client}
             </span>
           ))}
         </div>
+
       </div>
     </section>
   );

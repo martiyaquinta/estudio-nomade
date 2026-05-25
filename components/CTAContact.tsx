@@ -3,111 +3,102 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 export default function CTAContact() {
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-32 relative overflow-hidden"
       style={{ background: "var(--bg-secondary)" }}
     >
-      {/* Glow decorativo */}
+      {/* Glow navy fondo */}
       <div
-        className="absolute top-20 left-10 w-64 h-64 rounded-full pointer-events-none"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none"
         style={{
-          background: "rgba(232, 71, 10, 0.07)",
-          filter: "blur(70px)",
+          background: "radial-gradient(ellipse 60% 80% at 50% 0%, rgba(18, 64, 170, 0.22) 0%, transparent 70%)",
         }}
       />
+
+      {/* Glow orange sutil */}
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 rounded-full pointer-events-none"
+        className="absolute bottom-0 right-0 w-96 h-96 pointer-events-none"
         style={{
-          background: "var(--glow-purple)",
-          filter: "blur(90px)",
-          opacity: 0.5,
+          background: "radial-gradient(ellipse at 100% 100%, rgba(232, 71, 10, 0.08) 0%, transparent 60%)",
         }}
       />
+
+      {/* Dot grid sutil */}
+      <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-4xl mx-auto text-center">
 
           {/* Badge */}
-          <div className="inline-block">
+          <div className="inline-flex items-center gap-2 mb-10">
             <span
-              className="inline-block px-6 py-2 text-sm font-bold rounded-full"
+              className="inline-flex items-center gap-2 px-5 py-2 text-[11px] font-bold tracking-[0.16em] rounded-full"
               style={{
-                background: "rgba(232, 71, 10, 0.1)",
-                border: "1px solid rgba(232, 71, 10, 0.3)",
+                background: "rgba(232, 71, 10, 0.10)",
+                border: "1px solid rgba(232, 71, 10, 0.25)",
                 color: "var(--accent-orange)",
               }}
             >
-              💬 CONSULTORÍA 100% GRATUITA
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: "var(--accent-orange)" }}
+              />
+              PRIMERA CONSULTA GRATUITA
             </span>
           </div>
 
           {/* Título */}
           <h2
-            className="font-display font-bold text-white"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            className="font-display font-bold text-white mb-6"
+            style={{
+              fontSize: "clamp(2.25rem, 5vw, 4rem)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+            }}
           >
-            ¿Listo para impulsar tu negocio?
+            ¿Listo para impulsar<br />tu negocio?
           </h2>
 
           {/* Subtítulo */}
           <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: "var(--text-gray)" }}
+            className="text-lg max-w-xl mx-auto mb-12 leading-[1.75]"
+            style={{ color: "var(--text-muted)" }}
           >
-            Agenda una consultoría gratuita y descubre cómo podemos ayudarte a
-            crecer
+            Agenda una consultoría gratuita y descubre cómo podemos ayudarte a crecer
           </p>
 
           {/* CTA principal */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 px-10 py-5 font-display font-bold text-white rounded-full transition-all hover:opacity-90 hover:scale-105 text-base"
-              style={{
-                background: "var(--accent-orange)",
-                boxShadow: "0 4px 40px rgba(232, 71, 10, 0.4)",
-              }}
+              className="btn-primary font-display"
             >
               Solicitar consultoría gratuita
-              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRightIcon className="w-4 h-4" />
             </a>
           </div>
 
+          {/* Línea separadora */}
+          <div className="geo-line mb-12" />
+
           {/* Contacto directo */}
-          <div
-            className="pt-8"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+          <p
+            className="text-xs font-medium tracking-[0.14em] uppercase mb-6"
+            style={{ color: "var(--text-dim)" }}
           >
-            <p
-              className="text-sm mb-4"
-              style={{ color: "var(--text-gray)" }}
+            Escribinos directamente
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-8 justify-center items-center">
+            <a
+              href="mailto:groviaagencia@gmail.com"
+              className="text-sm font-bold transition-colors duration-200 hover:opacity-80"
+              style={{ color: "var(--accent-orange)" }}
             >
-              Contáctanos directamente:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="mailto:estudionomade2025@gmail.com"
-                className="text-sm font-semibold hover:text-white transition-colors duration-200"
-                style={{ color: "var(--text-gray)" }}
-              >
-                📧 estudionomade2025@gmail.com
-              </a>
-              <span
-                className="hidden sm:block"
-                style={{ color: "rgba(255,255,255,0.15)" }}
-              >
-                •
-              </span>
-              <a
-                href="mailto:groviaagencia@gmail.com"
-                className="text-sm font-semibold hover:text-white transition-colors duration-200"
-                style={{ color: "var(--accent-orange)" }}
-              >
-                📧 groviaagencia@gmail.com
-              </a>
-            </div>
+              groviaagencia@gmail.com
+            </a>
           </div>
+
         </div>
       </div>
     </section>

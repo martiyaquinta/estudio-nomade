@@ -3,33 +3,44 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════
-   PALETA DARK / PREMIUM
+   PALETA GROVIA — NAVY / NARANJA / BLANCO
    ═══════════════════════════════════════ */
 :root {
-  --bg-primary: #06080f;
-  --bg-secondary: #0d0f1f;
+  --bg-primary:         #050A1E;
+  --bg-secondary:       #070D26;
   --bg-hero-gradient: radial-gradient(
-    ellipse 70% 80% at 70% 50%,
-    #2d1b69 0%,
-    #1a0f4a 30%,
-    #06080f 70%
+    ellipse 85% 100% at 62% 42%,
+    #102575 0%,
+    #081848 28%,
+    #050A1E 62%
   );
-  --accent-orange: #e8470a;
-  --text-white: #ffffff;
-  --text-gray: #8a8fa8;
-  --card-bg: rgba(255, 255, 255, 0.06);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --glow-purple: rgba(120, 60, 255, 0.4);
+  --navy-brand:         #0B1F52;
+  --navy-mid:           #1240AA;
+  --navy-light:         #1A52CC;
+  --accent-orange:      #E8470A;
+  --accent-orange-soft: rgba(232, 71, 10, 0.12);
+  --text-white:         #FFFFFF;
+  --text-muted:         #B0BCCF;
+  --text-gray:          #8A9BB8;
+  --text-dim:           rgba(255, 255, 255, 0.35);
+  --card-bg:            rgba(255, 255, 255, 0.04);
+  --card-border:        rgba(255, 255, 255, 0.09);
+  --card-border-hover:  rgba(232, 71, 10, 0.30);
+  --glow-navy:          rgba(18, 64, 170, 0.40);
+  --glow-orange:        rgba(232, 71, 10, 0.30);
+  --line:               rgba(255, 255, 255, 0.07);
 
   /* Legacy aliases */
-  --background: #06080f;
-  --foreground: #ffffff;
-  --lavanda: #aeb2e4;
-  --violeta: #daabe4;
-  --navy: #1e3a8a;
-  --orange: #e8470a;
+  --background:  #050A1E;
+  --foreground:  #ffffff;
+  --lavanda:     #aeb2e4;
+  --violeta:     #daabe4;
+  --navy:        #1e3a8a;
+  --orange:      #e8470a;
+  --glow-purple: rgba(18, 64, 170, 0.40);
 }
 
+/* ─── Reset base ─── */
 body {
   color: var(--text-white);
   background: var(--bg-primary);
@@ -38,9 +49,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 *:focus-visible {
   outline: 2px solid var(--accent-orange);
@@ -48,66 +57,62 @@ html {
 }
 
 /* ═══════════════════════════════════════
+   FONDO TEXTURA — GRID PUNTILLADO SUTIL
+   ═══════════════════════════════════════ */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ═══════════════════════════════════════
    HERO — ANIMACIONES ESCALONADAS
    ═══════════════════════════════════════ */
 @keyframes hero-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-label {
-  animation: hero-reveal 0.6s ease-out both;
+  animation: hero-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 0s;
 }
 .hero-h1 {
-  animation: hero-reveal 0.6s ease-out both;
-  animation-delay: 0.15s;
+  animation: hero-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.12s;
 }
 .hero-subtitle {
-  animation: hero-reveal 0.6s ease-out both;
-  animation-delay: 0.3s;
+  animation: hero-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.24s;
 }
 .hero-cta {
-  animation: hero-reveal 0.6s ease-out both;
-  animation-delay: 0.45s;
+  animation: hero-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.36s;
 }
 
 /* ═══════════════════════════════════════
    CONSTELACIÓN — TARJETAS
    ═══════════════════════════════════════ */
 @keyframes card-reveal {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 .constellation-card {
-  animation: card-reveal 0.5s ease-out both;
+  animation: card-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.cc-d0 { animation-delay: 0.3s; }
-.cc-d1 { animation-delay: 0.4s; }
-.cc-d2 { animation-delay: 0.5s; }
-.cc-d3 { animation-delay: 0.6s; }
-.cc-d4 { animation-delay: 0.7s; }
-.cc-d5 { animation-delay: 0.8s; }
-.cc-d6 { animation-delay: 0.9s; }
-.cc-d7 { animation-delay: 1.0s; }
+.cc-d0 { animation-delay: 0.35s; }
+.cc-d1 { animation-delay: 0.45s; }
+.cc-d2 { animation-delay: 0.55s; }
+.cc-d3 { animation-delay: 0.65s; }
+.cc-d4 { animation-delay: 0.75s; }
+.cc-d5 { animation-delay: 0.85s; }
+.cc-d6 { animation-delay: 0.95s; }
+.cc-d7 { animation-delay: 1.05s; }
 
-/* ── Float animation para tarjetas de valores ── */
+/* ── Float animation ── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-7px); }
+  50%       { transform: translateY(-6px); }
 }
 
 .float-card {
@@ -115,61 +120,62 @@ html {
   animation-delay: var(--fdelay, 0s);
 }
 
-/* Estilos de tarjeta (CSS para hover sin JS en server component) */
+/* ── Estilos tarjetas constelación ── */
 .constellation-card-inner {
-  padding: 10px 22px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  background: rgba(11, 31, 82, 0.55);
+  border: 1px solid rgba(18, 64, 170, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   cursor: default;
   user-select: none;
   white-space: nowrap;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 0 16px rgba(120, 60, 255, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 20px rgba(11, 31, 82, 0.3);
 }
 
 .constellation-card-inner:hover {
   transform: scale(1.06);
-  box-shadow: 0 0 28px rgba(120, 60, 255, 0.35);
+  border-color: rgba(232, 71, 10, 0.45);
+  box-shadow: 0 8px 32px rgba(11, 31, 82, 0.5);
 }
 
 .constellation-card-main {
-  padding: 14px 28px;
-  background: var(--card-bg);
-  border: 1px solid rgba(120, 60, 255, 0.6);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  background: rgba(11, 31, 82, 0.65);
+  border: 1px solid rgba(18, 64, 170, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   cursor: default;
   user-select: none;
   white-space: nowrap;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 0 40px rgba(120, 60, 255, 0.35),
-    0 0 80px rgba(120, 60, 255, 0.15);
+  box-shadow:
+    0 0 40px rgba(18, 64, 170, 0.30),
+    0 0 80px rgba(18, 64, 170, 0.12);
 }
 
 .constellation-card-main:hover {
   transform: scale(1.06);
-  box-shadow: 0 0 60px rgba(120, 60, 255, 0.55),
-    0 0 100px rgba(120, 60, 255, 0.25);
+  box-shadow:
+    0 0 60px rgba(18, 64, 170, 0.50),
+    0 0 100px rgba(18, 64, 170, 0.20);
 }
 
 /* ═══════════════════════════════════════
-   CONSTELACIÓN — LÍNEAS SVG (stroke-dashoffset)
+   CONSTELACIÓN — LÍNEAS SVG
    ═══════════════════════════════════════ */
 @keyframes draw-line {
   from { stroke-dashoffset: 2000; }
   to   { stroke-dashoffset: 0; }
 }
 
-/* dasharray 2000 > cualquier trayecto (spokes ~190px, polígono ~1200px)
-   así el shape está completamente invisible antes de animar */
 .svg-line {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: draw-line 2s ease-out forwards;
+  animation: draw-line 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .line-d0 { animation-delay: 0.5s; }
 .line-d1 { animation-delay: 0.7s; }
@@ -178,21 +184,98 @@ html {
 .line-d4 { animation-delay: 1.3s; }
 
 /* ═══════════════════════════════════════
-   TARJETAS — HOVER GENÉRICO (dark theme)
+   TARJETAS — DARK THEME PREMIUM
    ═══════════════════════════════════════ */
 .dark-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .dark-card:hover {
-  border-color: rgba(232, 71, 10, 0.35);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(232, 71, 10, 0.08);
+  transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════════
+   LABEL DE SECCIÓN — PATRÓN REUTILIZABLE
+   ═══════════════════════════════════════ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-orange);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-orange);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   BOTONES PREMIUM
+   ═══════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: var(--accent-orange);
+  color: white;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 40px rgba(232, 71, 10, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 50px rgba(232, 71, 10, 0.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════
+   LÍNEA DECORATIVA HORIZONTAL
+   ═══════════════════════════════════════ */
+.geo-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--card-border) 20%, var(--card-border) 80%, transparent);
 }
 
 /* ═══════════════════════════════════════
@@ -200,31 +283,29 @@ html {
    ═══════════════════════════════════════ */
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-down {
   from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-fade-in  { animation: fade-in 1s ease-out; }
 .animate-slide-up { animation: slide-up 1s ease-out; }
 .animate-slide-down { animation: slide-down 1s ease-out; }
 
-.delay-200 { animation-delay: 0.2s; animation-fill-mode: backwards; }
-.delay-400 { animation-delay: 0.4s; animation-fill-mode: backwards; }
-.delay-600 { animation-delay: 0.6s; animation-fill-mode: backwards; }
-.delay-800 { animation-delay: 0.8s; animation-fill-mode: backwards; }
+.delay-200  { animation-delay: 0.2s; animation-fill-mode: backwards; }
+.delay-400  { animation-delay: 0.4s; animation-fill-mode: backwards; }
+.delay-600  { animation-delay: 0.6s; animation-fill-mode: backwards; }
+.delay-800  { animation-delay: 0.8s; animation-fill-mode: backwards; }
 .delay-1000 { animation-delay: 1s; }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 }

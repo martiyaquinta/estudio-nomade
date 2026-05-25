@@ -51,6 +51,7 @@ const config: Config = {
         montserrat: ["var(--font-syne)", "sans-serif"],
         openSans: ["var(--font-dm-sans)", "sans-serif"],
         blanka: ["var(--font-syne)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
     },
   },

@@ -1,142 +1,204 @@
-import type { CSSProperties } from "react";
+"use client";
 
-/*
-  ── GEOMETRÍA ABIERTA (sin polígono de cierre) ──────────────────────
-  7 valores en los vértices de un heptágono regular.
-  Solo radios desde el centro → vértices (sin borde exterior).
-  "Confianza" eliminada del listado de valores.
+import { CSSProperties } from "react";
 
-  Desktop:  viewBox 0 0 600 520 | centro (300, 260) | radio 190
-  Mobile:   viewBox 0 0 360 440 | centro (180, 240) | radio 115
-
-  Vértices (ángulo inicial -90°, paso 51.43°):
-  Desktop          Mobile
-  0 Innovación      (300,  70)   (180, 125)
-  1 Creatividad     (449, 142)   (270, 168)
-  2 Estrategia      (485, 302)   (292, 266)
-  3 Marketing       (382, 431)   (230, 344)
-  4 Resultados      (218, 431)   (130, 344)
-  5 Profesionalismo (115, 302)   ( 68, 266)
-  6 Calidad         (151, 142)   ( 90, 168)
-  ─────────────────────────────────────────────────────────────────── */
-
-// Mobile viewBox 520×480 | centro (230, 245) | radio 160
-const VALUES = [
-  { label: "Innovación",      cx: 300, cy:  70, mcx: 230, mcy:  85, delay: "cc-d0", fd: "4.2s", fdelay: "0s"   },
-  { label: "Creatividad",     cx: 449, cy: 142, mcx: 355, mcy: 145, delay: "cc-d1", fd: "5.1s", fdelay: "0.8s" },
-  { label: "Estrategia",      cx: 485, cy: 302, mcx: 386, mcy: 281, delay: "cc-d2", fd: "3.7s", fdelay: "1.4s" },
-  { label: "Marketing",       cx: 382, cy: 431, mcx: 299, mcy: 389, delay: "cc-d4", fd: "4.5s", fdelay: "2.0s" },
-  { label: "Resultados",      cx: 218, cy: 431, mcx: 161, mcy: 389, delay: "cc-d5", fd: "3.9s", fdelay: "0.6s" },
-  { label: "Profesionalismo", cx: 115, cy: 302, mcx:  74, mcy: 281, delay: "cc-d6", fd: "5.4s", fdelay: "1.2s" },
-  { label: "Calidad",         cx: 151, cy: 142, mcx: 105, mcy: 145, delay: "cc-d7", fd: "4.8s", fdelay: "2.4s" },
+/* ── Tarjetas métricas flotantes ── */
+const metrics = [
+  {
+    id: "m1",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M3 13L7 9L10 12L15 6" stroke="#E8470A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 6H15V9" stroke="#E8470A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    value: "+340%",
+    label: "Conversiones",
+    pos: { top: "6%", right: "-4%" },
+    fd: "4.2s",
+    fdelay: "0s",
+    delay: "cc-d1",
+  },
+  {
+    id: "m2",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="9" cy="9" r="7" stroke="#E8470A" strokeWidth="1.6"/>
+        <path d="M9 5V9L12 11" stroke="#E8470A" strokeWidth="1.6" strokeLinecap="round"/>
+      </svg>
+    ),
+    value: "24 / 7",
+    label: "Sitio siempre activo",
+    pos: { bottom: "18%", right: "-6%" },
+    fd: "5.0s",
+    fdelay: "0.6s",
+    delay: "cc-d3",
+  },
+  {
+    id: "m3",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 16L6.5 10L10 13L14.5 7L16 9" stroke="#E8470A" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="16" cy="4" r="2" fill="#E8470A"/>
+      </svg>
+    ),
+    value: "3×",
+    label: "Más leads calificados",
+    pos: { bottom: "6%", left: "4%" },
+    fd: "4.7s",
+    fdelay: "1.2s",
+    delay: "cc-d5",
+  },
 ];
 
-const cardStyle = (sm = false): CSSProperties => ({
-  padding: sm ? "7px 13px" : "10px 22px",
-  background: "var(--card-bg)",
-  border: "1px solid var(--card-border)",
-  borderRadius: "12px",
-  backdropFilter: "blur(10px)",
-  WebkitBackdropFilter: "blur(10px)",
-  whiteSpace: "nowrap",
-  cursor: "default",
-  userSelect: "none",
-  boxShadow: "0 0 12px rgba(120,60,255,0.12)",
-});
-
-const labelStyle = (sm = false): CSSProperties => ({
-  color: "white",
-  fontWeight: 500,
-  fontSize: sm ? "0.7rem" : "0.85rem",
-  fontFamily: "var(--font-syne), sans-serif",
-  display: "block",
-});
-
-/* ── SVG desktop: solo radios, sin polígono cerrado ── */
-function DesktopSVG() {
-  // Centro (300, 260) → cada vértice
-  const spokes = [
-    { x2: 300, y2:  70, d: "0.5s" },
-    { x2: 449, y2: 142, d: "0.7s" },
-    { x2: 485, y2: 302, d: "0.9s" },
-    { x2: 382, y2: 431, d: "1.1s" },
-    { x2: 218, y2: 431, d: "1.1s" },
-    { x2: 115, y2: 302, d: "0.9s" },
-    { x2: 151, y2: 142, d: "0.7s" },
-  ];
-  const vertices = spokes.map((s) => [s.x2, s.y2]);
-
+/* ── Líneas simuladas de texto ── */
+function TextLine({ w, opacity = 1 }: { w: string; opacity?: number }) {
   return (
-    <svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      viewBox="0 0 600 520"
-      preserveAspectRatio="xMidYMid meet"
-      style={{ overflow: "visible" }}
-      aria-hidden="true"
-    >
-      {/* Radios animados */}
-      {spokes.map((s, i) => (
-        <line
-          key={i}
-          x1={300} y1={260}
-          x2={s.x2} y2={s.y2}
-          className="svg-line"
-          stroke="rgba(120,60,255,0.4)"
-          strokeWidth="1"
-          style={{ animationDelay: s.d }}
-        />
-      ))}
-
-      {/* Puntos naranjas en cada vértice */}
-      {vertices.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3.5" fill="#E8470A" opacity="0.9" />
-      ))}
-
-      {/* Glow difuso en el centro (sin tarjeta) */}
-      <circle cx="300" cy="260" r="6"  fill="rgba(120,60,255,0.25)" />
-      <circle cx="300" cy="260" r="18" fill="rgba(120,60,255,0.07)" />
-    </svg>
+    <div
+      style={{
+        width: w,
+        height: "7px",
+        borderRadius: "4px",
+        background: `rgba(255,255,255,${opacity})`,
+      }}
+    />
   );
 }
 
-/* ── SVG mobile: 520×480 | centro (230,245) | radio 160 ── */
-function MobileSVG() {
-  const spokes = [
-    { x2: 230, y2:  85, d: "0.5s" },
-    { x2: 355, y2: 145, d: "0.7s" },
-    { x2: 386, y2: 281, d: "0.9s" },
-    { x2: 299, y2: 389, d: "1.1s" },
-    { x2: 161, y2: 389, d: "1.1s" },
-    { x2:  74, y2: 281, d: "0.9s" },
-    { x2: 105, y2: 145, d: "0.7s" },
-  ];
-  const vertices = spokes.map((s) => [s.x2, s.y2]);
-
+/* ── Mockup de browser ── */
+function BrowserMockup() {
   return (
-    <svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      viewBox="0 0 520 480"
-      preserveAspectRatio="xMidYMid meet"
-      style={{ overflow: "visible" }}
-      aria-hidden="true"
+    <div
+      style={{
+        borderRadius: "14px",
+        overflow: "hidden",
+        boxShadow: "0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(18,64,170,0.30)",
+        background: "#060D26",
+      }}
     >
-      {spokes.map((s, i) => (
-        <line
-          key={i}
-          x1={230} y1={245}
-          x2={s.x2} y2={s.y2}
-          className="svg-line"
-          stroke="rgba(120,60,255,0.45)"
-          strokeWidth="1.5"
-          style={{ animationDelay: s.d }}
-        />
-      ))}
-      {vertices.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3.5" fill="#E8470A" opacity="0.9" />
-      ))}
-      <circle cx="230" cy="245" r="6"  fill="rgba(120,60,255,0.3)"  />
-      <circle cx="230" cy="245" r="18" fill="rgba(120,60,255,0.08)" />
-    </svg>
+      {/* Chrome bar */}
+      <div
+        style={{
+          background: "#0B1640",
+          padding: "10px 14px",
+          display: "flex",
+          alignItems: "center",
+          gap: "6px",
+          borderBottom: "1px solid rgba(18,64,170,0.25)",
+        }}
+      >
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "#E8470A", display: "block" }} />
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "block" }} />
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "block" }} />
+        <div
+          style={{
+            flex: 1,
+            marginLeft: "10px",
+            background: "rgba(255,255,255,0.06)",
+            borderRadius: "5px",
+            height: "20px",
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: "8px",
+          }}
+        >
+          <span style={{ color: "rgba(255,255,255,0.30)", fontSize: "0.58rem", letterSpacing: "0.06em" }}>
+            grovia.com
+          </span>
+        </div>
+      </div>
+
+      {/* Simulación de contenido web */}
+      <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: "14px" }}>
+
+        {/* Nav simulada */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ width: "60px", height: "8px", borderRadius: "4px", background: "rgba(232,71,10,0.60)" }} />
+          <div style={{ display: "flex", gap: "10px" }}>
+            {[40, 50, 38, 30].map((w, i) => (
+              <div key={i} style={{ width: `${w}px`, height: "6px", borderRadius: "3px", background: "rgba(255,255,255,0.12)" }} />
+            ))}
+          </div>
+        </div>
+
+        {/* Hero simulado */}
+        <div
+          style={{
+            borderRadius: "10px",
+            padding: "20px 16px",
+            background: "linear-gradient(135deg, rgba(18,64,170,0.25) 0%, rgba(11,31,82,0.40) 100%)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+          }}
+        >
+          <TextLine w="75%" opacity={0.85} />
+          <TextLine w="55%" opacity={0.85} />
+          <TextLine w="38%" opacity={0.40} />
+          <div style={{ marginTop: "8px", display: "flex", gap: "8px" }}>
+            <div style={{ width: "72px", height: "20px", borderRadius: "20px", background: "#E8470A" }} />
+            <div style={{ width: "60px", height: "20px", borderRadius: "20px", background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.18)" }} />
+          </div>
+        </div>
+
+        {/* Cards simuladas */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+          {[
+            { color: "rgba(232,71,10,0.20)", border: "rgba(232,71,10,0.30)" },
+            { color: "rgba(18,64,170,0.20)", border: "rgba(18,64,170,0.30)" },
+            { color: "rgba(255,255,255,0.04)", border: "rgba(255,255,255,0.10)" },
+          ].map((c, i) => (
+            <div
+              key={i}
+              style={{
+                borderRadius: "8px",
+                padding: "10px 8px",
+                background: c.color,
+                border: `1px solid ${c.border}`,
+                display: "flex",
+                flexDirection: "column",
+                gap: "5px",
+              }}
+            >
+              <div style={{ width: "14px", height: "14px", borderRadius: "4px", background: "rgba(255,255,255,0.20)" }} />
+              <TextLine w="70%" opacity={0.70} />
+              <TextLine w="50%" opacity={0.30} />
+            </div>
+          ))}
+        </div>
+
+        {/* Gráfico simulado */}
+        <div
+          style={{
+            borderRadius: "8px",
+            padding: "10px 12px",
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.07)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
+            <TextLine w="30%" opacity={0.50} />
+            <TextLine w="15%" opacity={0.25} />
+          </div>
+          {/* Barras de gráfico */}
+          <div style={{ display: "flex", alignItems: "flex-end", gap: "5px", height: "36px" }}>
+            {[40, 55, 35, 70, 50, 85, 65, 90].map((h, i) => (
+              <div
+                key={i}
+                style={{
+                  flex: 1,
+                  height: `${h}%`,
+                  borderRadius: "3px 3px 0 0",
+                  background: i === 7
+                    ? "#E8470A"
+                    : `rgba(18,64,170,${0.3 + i * 0.05})`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -146,72 +208,153 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "var(--bg-primary)" }}
     >
+      {/* Gradiente de fondo — navy */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "var(--bg-hero-gradient)" }}
       />
 
-      <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="flex flex-col lg:grid lg:grid-cols-[45fr_55fr] gap-12 lg:gap-16 items-center min-h-[80vh]">
+      {/* Textura dot grid */}
+      <div className="absolute inset-0 pointer-events-none dot-grid opacity-40" />
+
+      <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+        <div className="flex flex-col lg:grid lg:grid-cols-[46fr_54fr] gap-12 lg:gap-16 items-center min-h-[80vh]">
 
           {/* ══ TEXTO IZQUIERDA ════════════════════════════════ */}
-          <div className="flex flex-col gap-7">
-            <p className="hero-label flex items-center gap-3">
-              <span className="flex-shrink-0 h-px w-8" style={{ background: "var(--accent-orange)" }} />
-              <span className="text-[11px] font-medium tracking-[0.18em] uppercase" style={{ color: "var(--accent-orange)" }}>
-                DESARROLLO WEB & MARKETING ESTRATÉGICO
-              </span>
+          <div className="flex flex-col gap-8">
+
+            <p className="hero-label section-label">
+              MARKETING ESTRATÉGICO & DESARROLLO WEB
             </p>
 
             <h1
-              className="hero-h1 font-display font-bold text-white leading-[1.08]"
-              style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.25rem)" }}
+              className="hero-h1 font-poppins font-bold text-white"
+              style={{
+                fontSize: "clamp(2.4rem, 4.6vw, 4.25rem)",
+                lineHeight: 1.06,
+                letterSpacing: "-0.01em",
+              }}
             >
               Tu presencia digital que atrae, convence y vende
               <span style={{ color: "var(--accent-orange)" }}>.</span>
             </h1>
 
             <p
-              className="hero-subtitle text-base sm:text-lg leading-relaxed"
-              style={{ color: "var(--text-gray)", maxWidth: "30rem" }}
+              className="hero-subtitle text-base sm:text-lg leading-[1.75]"
+              style={{ color: "var(--text-muted)", maxWidth: "28rem" }}
             >
-              Estudio Nómade y Grovia unen desarrollo web y marketing
-              para que tu negocio crezca online.
+              Somos Grovia — marketing estratégico y desarrollo web
+              para que tu negocio crezca y venda online.
             </p>
 
-            <div className="hero-cta">
+            <div className="hero-cta flex items-center gap-5 flex-wrap">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 font-display font-bold text-sm tracking-[0.12em] text-white rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105"
-                style={{ background: "var(--accent-orange)", boxShadow: "0 4px 40px rgba(232,71,10,0.4)" }}
+                className="btn-primary font-display"
               >
-                AGENDAR LLAMADA ↗
+                AGENDAR LLAMADA
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
+              <span
+                className="text-xs font-medium"
+                style={{ color: "var(--text-gray)", letterSpacing: "0.04em" }}
+              >
+                Consultoría gratuita · Sin compromiso
+              </span>
             </div>
           </div>
 
-          {/* ══ DESKTOP — estrella abierta ═════════════════════ */}
+          {/* ══ VISUAL DERECHA — Browser mockup ══════════════ */}
           <div className="hidden lg:block w-full">
-            <div
-              className="relative w-full"
-              style={{ aspectRatio: "600 / 520", overflow: "visible" }}
-            >
-              <DesktopSVG />
-              {VALUES.map((v) => (
+            <div className="relative" style={{ padding: "30px 40px 30px 20px" }}>
+
+              {/* Glow detrás del mockup */}
+              <div
+                className="absolute pointer-events-none"
+                style={{
+                  inset: "10%",
+                  background: "radial-gradient(ellipse, rgba(18,64,170,0.35) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                  zIndex: 0,
+                }}
+              />
+
+              {/* Browser mockup con animación de entrada */}
+              <div
+                className="constellation-card cc-d0 relative"
+                style={{ zIndex: 1 }}
+              >
+                <BrowserMockup />
+              </div>
+
+              {/* Tarjetas métricas flotantes */}
+              {metrics.map((m) => (
                 <div
-                  key={v.label}
-                  className={`constellation-card ${v.delay} absolute`}
-                  style={{
-                    left: `${(v.cx / 600) * 100}%`,
-                    top:  `${(v.cy / 520) * 100}%`,
-                    transform: "translate(-50%, -50%)",
-                  }}
+                  key={m.id}
+                  className={`constellation-card ${m.delay} absolute`}
+                  style={{ ...m.pos, zIndex: 2 }}
                 >
-                  <div className="float-card" style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}>
-                    <div style={cardStyle()}>
-                      <span style={labelStyle()}>{v.label}</span>
+                  <div
+                    className="float-card"
+                    style={{ "--fd": m.fd, "--fdelay": m.fdelay } as CSSProperties}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        padding: "10px 16px",
+                        background: "rgba(6, 13, 38, 0.90)",
+                        border: "1px solid rgba(18, 64, 170, 0.40)",
+                        borderRadius: "10px",
+                        backdropFilter: "blur(14px)",
+                        WebkitBackdropFilter: "blur(14px)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.40)",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "32px",
+                          height: "32px",
+                          borderRadius: "8px",
+                          background: "rgba(232,71,10,0.15)",
+                          border: "1px solid rgba(232,71,10,0.25)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {m.icon}
+                      </div>
+                      <div>
+                        <div
+                          style={{
+                            color: "#fff",
+                            fontWeight: 700,
+                            fontSize: "1rem",
+                            lineHeight: 1.2,
+                            fontFamily: "var(--font-poppins), sans-serif",
+                          }}
+                        >
+                          {m.value}
+                        </div>
+                        <div
+                          style={{
+                            color: "var(--text-gray)",
+                            fontSize: "0.68rem",
+                            letterSpacing: "0.04em",
+                            marginTop: "1px",
+                          }}
+                        >
+                          {m.label}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -219,30 +362,52 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ══ MOBILE — estrella abierta en portrait ══════════ */}
-          <div className="lg:hidden w-full mt-2">
-            <div
-              className="relative w-full"
-              style={{ aspectRatio: "520 / 480", overflow: "visible" }}
-            >
-              <MobileSVG />
-              {VALUES.map((v) => (
+          {/* ══ MOBILE — mockup compacto ═══════════════════════ */}
+          <div className="lg:hidden w-full">
+            <div className="relative mx-auto" style={{ maxWidth: "360px", padding: "20px 0" }}>
+              <div
+                className="absolute pointer-events-none"
+                style={{
+                  inset: "0",
+                  background: "radial-gradient(ellipse, rgba(18,64,170,0.30) 0%, transparent 70%)",
+                  filter: "blur(24px)",
+                }}
+              />
+              <div className="constellation-card cc-d0 relative">
+                <BrowserMockup />
+              </div>
+              {/* Solo la primera métrica en mobile */}
+              <div
+                className="constellation-card cc-d2 absolute"
+                style={{ bottom: "0", right: "-10px", zIndex: 2 }}
+              >
                 <div
-                  key={v.label}
-                  className={`constellation-card ${v.delay} absolute`}
-                  style={{
-                    left: `${(v.mcx / 520) * 100}%`,
-                    top:  `${(v.mcy / 480) * 100}%`,
-                    transform: "translate(-50%, -50%)",
-                  }}
+                  className="float-card"
+                  style={{ "--fd": "4.2s", "--fdelay": "0.4s" } as CSSProperties}
                 >
-                  <div className="float-card" style={{ "--fd": v.fd, "--fdelay": v.fdelay } as CSSProperties}>
-                    <div style={cardStyle(true)}>
-                      <span style={labelStyle(true)}>{v.label}</span>
-                    </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "8px 12px",
+                      background: "rgba(6, 13, 38, 0.92)",
+                      border: "1px solid rgba(18, 64, 170, 0.40)",
+                      borderRadius: "9px",
+                      backdropFilter: "blur(14px)",
+                      WebkitBackdropFilter: "blur(14px)",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.40)",
+                    }}
+                  >
+                    <span style={{ color: "#E8470A", fontWeight: 700, fontSize: "1rem", fontFamily: "var(--font-poppins)" }}>
+                      +340%
+                    </span>
+                    <span style={{ color: "var(--text-gray)", fontSize: "0.65rem" }}>
+                      Conversiones
+                    </span>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 

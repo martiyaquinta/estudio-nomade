@@ -65,8 +65,8 @@ export default function ProyectosPage() {
               Proyectos
             </h1>
             <p className="text-lg" style={{ color: "var(--text-gray)" }}>
-              Una selección de trabajos recientes que reflejan nuestra filosofía de
-              diseño minimalista y código limpio.
+              Trabajos reales de Grovia — diseño, desarrollo y estrategia
+              para negocios que querían crecer online.
             </p>
           </div>
         </div>

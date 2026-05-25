@@ -6,78 +6,61 @@ export default function Footer() {
 
   return (
     <footer
-      className="py-12 text-white"
+      className="pt-16 pb-10"
       style={{
-        background: "#050710",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
+        background: "#030814",
+        borderTop: "1px solid var(--line)",
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
 
-          {/* Marcas */}
-          <div>
-            <div className="space-y-6">
-              {/* Estudio Nómade */}
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/logosinfondo.png"
-                  alt="Estudio Nómade"
-                  width={52}
-                  height={52}
-                  className="w-12 h-12 object-contain opacity-70"
-                />
-                <div>
-                  <h3 className="font-display font-bold text-white tracking-widest text-sm mb-0.5">
-                    ESTUDIO NÓMADE
-                  </h3>
-                  <p
-                    className="text-xs italic"
-                    style={{ color: "var(--text-gray)" }}
-                  >
-                    Diseño y código en movimiento
-                  </p>
-                </div>
-              </div>
+        {/* Grid principal */}
+        <div className="grid md:grid-cols-3 gap-12 mb-14">
 
-              {/* Grovia */}
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/LOGO GROVIA SIN FONDO.png"
-                  alt="Grovia Marketing"
-                  width={52}
-                  height={52}
-                  className="w-12 h-12 object-contain opacity-70"
-                />
-                <div>
-                  <h3 className="font-display font-bold text-white tracking-widest text-sm mb-0.5">
-                    GROVIA
-                  </h3>
-                  <p
-                    className="text-xs italic"
-                    style={{ color: "var(--text-gray)" }}
-                  >
-                    Marketing que impulsa resultados
-                  </p>
-                </div>
-              </div>
+          {/* Marca */}
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/LOGO GROVIA SIN FONDO.png"
+                alt="Grovia"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+                style={{ opacity: 0.80 }}
+              />
+              <span
+                className="text-xl font-bold text-white tracking-[0.16em]"
+                style={{ fontFamily: "var(--font-sora), sans-serif" }}
+              >
+                GROVIA
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)", maxWidth: "220px" }}>
+              Marketing estratégico y desarrollo web para negocios que quieren crecer online.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "var(--text-dim)" }}>
+              <span
+                className="inline-block w-1.5 h-1.5 rounded-full"
+                style={{ background: "var(--accent-orange)" }}
+              />
+              Valentín · Martina
             </div>
           </div>
 
           {/* Navegación */}
           <div>
             <h4
-              className="font-display font-bold text-xs tracking-[0.18em] uppercase mb-5"
-              style={{ color: "var(--text-gray)" }}
+              className="font-display font-bold text-[10px] tracking-[0.22em] uppercase mb-6"
+              style={{ color: "var(--text-dim)" }}
             >
               Navegación
             </h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {[
-                { href: "/proyectos", label: "Proyectos" },
-                { href: "/servicios", label: "Servicios" },
+                { href: "/proyectos",      label: "Proyectos" },
+                { href: "/servicios",      label: "Servicios" },
                 { href: "/sobre-nosotros", label: "Sobre nosotros" },
-                { href: "/contacto", label: "Contacto" },
+                { href: "/contacto",       label: "Contacto" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
@@ -95,18 +78,33 @@ export default function Footer() {
           {/* Contacto */}
           <div>
             <h4
-              className="font-display font-bold text-xs tracking-[0.18em] uppercase mb-5"
-              style={{ color: "var(--text-gray)" }}
+              className="font-display font-bold text-[10px] tracking-[0.22em] uppercase mb-6"
+              style={{ color: "var(--text-dim)" }}
             >
-              Conecta
+              Contacto
             </h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-4">
               <li>
                 <p
-                  className="text-[10px] uppercase tracking-wider mb-1"
-                  style={{ color: "rgba(255,255,255,0.3)" }}
+                  className="text-[10px] uppercase tracking-wider mb-1 font-bold"
+                  style={{ color: "var(--text-dim)" }}
                 >
-                  Estudio Nómade
+                  Email principal
+                </p>
+                <a
+                  href="mailto:groviaagencia@gmail.com"
+                  className="text-sm font-semibold transition-colors duration-200 hover:opacity-80"
+                  style={{ color: "var(--accent-orange)" }}
+                >
+                  groviaagencia@gmail.com
+                </a>
+              </li>
+              <li>
+                <p
+                  className="text-[10px] uppercase tracking-wider mb-1 font-bold"
+                  style={{ color: "var(--text-dim)" }}
+                >
+                  Desarrollo web
                 </p>
                 <a
                   href="mailto:estudionomade2025@gmail.com"
@@ -116,22 +114,7 @@ export default function Footer() {
                   estudionomade2025@gmail.com
                 </a>
               </li>
-              <li>
-                <p
-                  className="text-[10px] uppercase tracking-wider mb-1"
-                  style={{ color: "rgba(255,255,255,0.3)" }}
-                >
-                  Grovia Marketing
-                </p>
-                <a
-                  href="mailto:groviaagencia@gmail.com"
-                  className="text-sm transition-colors duration-200"
-                  style={{ color: "var(--accent-orange)" }}
-                >
-                  groviaagencia@gmail.com
-                </a>
-              </li>
-              <li className="pt-2 flex gap-4">
+              <li className="flex items-center gap-5 pt-1">
                 <a
                   href="https://www.instagram.com/estudionomade.web/"
                   target="_blank"
@@ -155,17 +138,25 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Separador */}
+        <div className="geo-line mb-8" />
+
         {/* Copyright */}
         <div
-          className="pt-8 text-center text-xs"
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            color: "rgba(255,255,255,0.3)",
-          }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]"
+          style={{ color: "var(--text-dim)" }}
         >
-          © {currentYear} Estudio Nómade + Grovia Marketing. Todos los derechos
-          reservados.
+          <span>
+            © {currentYear} Grovia · Marketing Estratégico & Desarrollo Web. Todos los derechos reservados.
+          </span>
+          <span
+            className="font-display font-bold tracking-[0.12em]"
+            style={{ color: "rgba(255,255,255,0.15)" }}
+          >
+            GROVIA
+          </span>
         </div>
+
       </div>
     </footer>
   );

@@ -3,8 +3,6 @@ import Hero from "@/components/Hero";
 import ServicesPreview from "@/components/ServicesPreview";
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
-import Portfolio from "@/components/Portfolio";
-import TrustedBy from "@/components/TrustedBy";
 import CTAContact from "@/components/CTAContact";
 import Footer from "@/components/Footer";
 
@@ -16,8 +14,6 @@ export default function Home() {
       <ServicesPreview />
       <About />
       <Benefits />
-      <Portfolio />
-      <TrustedBy />
       <CTAContact />
       <Footer />
     </main>

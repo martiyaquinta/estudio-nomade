@@ -1,22 +1,24 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-
 const problems = [
   {
+    number: "01",
     title: "Pierdo oportunidades por no tener una web seria",
     description:
       "Tu empresa necesita una buena presencia online, pero no querés algo improvisado. Diseñamos sitios que transmiten confianza, explican claro lo que hacés y te ayudan a captar más clientes desde el primer día.",
   },
   {
+    number: "02",
     title: "Quiero ser primero en Google pero no sé por dónde empezar",
     description:
       "SEO, campañas, blog, Google Ads, posicionamiento... Suena complejo. Nosotros lo simplificamos y armamos un plan realista para que empieces a tener visibilidad y resultados.",
   },
   {
+    number: "03",
     title: "Necesitamos una web compleja, con funcionalidades específicas",
     description:
       "Contamos con un equipo completo: programadores, diseñadores, maquetadores y estrategas. Abordamos proyectos grandes, complejos y personalizados para empresas que necesitan soluciones en el siguiente nivel.",
   },
   {
+    number: "04",
     title: "No sé cómo arrancar, pero sé que necesito hacer algo",
     description:
       "Muchos clientes llegan con un mix de dudas, urgencias y ganas de mejorar. Tengamos una charla sin compromiso y te ayudamos a ordenar prioridades y entender qué conviene hacer paso a paso.",
@@ -26,55 +28,55 @@ const problems = [
 export default function About() {
   return (
     <section
-      className="py-24"
-      style={{ background: "var(--bg-secondary)" }}
+      className="py-28"
+      style={{
+        background: "var(--bg-secondary)",
+        borderTop: "1px solid var(--line)",
+      }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Encabezado */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span
-              className="h-px w-8 flex-shrink-0"
-              style={{ background: "var(--accent-orange)" }}
-            />
-            <span
-              className="text-[11px] font-medium tracking-[0.18em] uppercase"
-              style={{ color: "var(--accent-orange)" }}
-            >
-              PROBLEMAS QUE RESOLVEMOS
-            </span>
-            <span
-              className="h-px w-8 flex-shrink-0"
-              style={{ background: "var(--accent-orange)" }}
-            />
-          </div>
+        <div className="text-center mb-20 max-w-2xl mx-auto">
+          <p className="section-label justify-center mb-5">POR QUÉ ELEGIRNOS</p>
           <h2
             className="font-display font-bold text-white text-balance"
-            style={{ fontSize: "clamp(1.75rem, 3vw, 3rem)" }}
+            style={{
+              fontSize: "clamp(1.875rem, 3.5vw, 3rem)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.01em",
+            }}
           >
-            ¿Qué problemas resuelve un sitio web profesional para tu empresa?
+            Los problemas que resolvemos para tu negocio
           </h2>
         </div>
 
         {/* Grid de problemas */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-16">
-          {problems.map((problem, index) => (
+        <div className="grid md:grid-cols-2 gap-5 max-w-6xl mx-auto mb-16">
+          {problems.map((problem) => (
             <div
-              key={index}
-              className="dark-card group p-8 transition-all duration-300"
+              key={problem.number}
+              className="dark-card group p-8 flex flex-col gap-5"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <ExclamationTriangleIcon
-                  className="w-6 h-6 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
-                  style={{ color: "var(--accent-orange)" }}
-                />
-                <h3 className="text-xl font-display font-bold text-white leading-tight">
+              {/* Número + título en línea */}
+              <div className="flex items-start gap-5">
+                <span
+                  className="font-display font-bold text-2xl leading-none shrink-0 mt-0.5 tabular-nums"
+                  style={{ color: "rgba(232, 71, 10, 0.35)" }}
+                >
+                  {problem.number}
+                </span>
+                <h3 className="text-lg font-display font-bold text-white leading-snug">
                   {problem.title}
                 </h3>
               </div>
+
+              {/* Separador */}
+              <div className="geo-line" />
+
+              {/* Descripción */}
               <p
-                className="text-sm leading-relaxed pl-10"
+                className="text-sm leading-[1.75]"
                 style={{ color: "var(--text-gray)" }}
               >
                 {problem.description}
@@ -89,15 +91,15 @@ export default function About() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSc2Oulcutu_sJq7bWBfkN4OyoM68vkgmeuNWNLJ1tBwlbFQqA/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 font-display font-bold tracking-wider text-white rounded-full transition-all hover:opacity-90 hover:scale-105 text-sm"
-            style={{
-              background: "var(--accent-orange)",
-              boxShadow: "0 4px 40px rgba(232,71,10,0.4)",
-            }}
+            className="btn-primary font-display"
           >
-            QUIERO UNA ASESORÍA DE MARKETING GRATUITA
+            HABLAR CON GROVIA
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </a>
         </div>
+
       </div>
     </section>
   );

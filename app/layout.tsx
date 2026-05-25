@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Share_Tech_Mono, Sora } from "next/font/google";
+import { Syne, DM_Sans, Share_Tech_Mono, Sora, Poppins } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -24,6 +24,13 @@ const shareTechMono = Share_Tech_Mono({
   display: "swap",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+
 /* Grovia — moderna, limpia */
 const sora = Sora({
   subsets: ["latin"],
@@ -33,9 +40,9 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Estudio Nómade + Grovia - Diseño web y marketing",
+  title: "Grovia — Marketing Estratégico & Desarrollo Web",
   description:
-    "Código y diseño en movimiento + Estrategia de marketing. Creamos experiencias digitales únicas con enfoque en resultados.",
+    "Grovia es una agencia de marketing estratégico y desarrollo web. Te ayudamos a crecer online con estrategia clara, diseño profesional y resultados reales.",
 };
 
 export default function RootLayout({
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${syne.variable} ${dmSans.variable} ${shareTechMono.variable} ${sora.variable}`}
+      className={`${syne.variable} ${dmSans.variable} ${shareTechMono.variable} ${sora.variable} ${poppins.variable}`}
     >
       <body className={`${dmSans.className} antialiased`}>{children}</body>
     </html>
