@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ServicesPreview from "@/components/ServicesPreview";
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
+import SociosSection from "@/components/SociosSection";
 import CTAContact from "@/components/CTAContact";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ServicesPreview />
+      <SociosSection />
       <About />
       <Benefits />
       <CTAContact />

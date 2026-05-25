@@ -89,7 +89,7 @@ export default function AboutUs() {
 
               {/* Especialidades */}
               <div className="flex flex-wrap gap-2 mt-6">
-                {["Estrategia digital", "Marketing de contenidos", "Gestión de redes", "Campañas"].map((tag) => (
+                {["Estrategia digital", "Marketing de contenidos", "Campañas"].map((tag) => (
                   <span
                     key={tag}
                     className="text-[10px] font-bold tracking-wider px-2.5 py-1 rounded"

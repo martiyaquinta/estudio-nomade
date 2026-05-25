@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans, Share_Tech_Mono, Sora, Poppins } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -55,7 +56,10 @@ export default function RootLayout({
       lang="es"
       className={`${syne.variable} ${dmSans.variable} ${shareTechMono.variable} ${sora.variable} ${poppins.variable}`}
     >
-      <body className={`${dmSans.className} antialiased`}>{children}</body>
+      <body className={`${dmSans.className} antialiased`}>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }
