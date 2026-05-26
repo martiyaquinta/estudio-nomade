@@ -28,18 +28,6 @@ export default function WhatsAppButton() {
         (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
       }}
     >
-      {/* Etiqueta de número — visible al hover */}
-      <span
-        className="text-xs font-bold tracking-wide text-white px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: "rgba(37, 211, 102, 0.15)",
-          border: "1px solid rgba(37, 211, 102, 0.30)",
-          whiteSpace: "nowrap",
-        }}
-      >
-        +54 9 223 349-1780
-      </span>
-
       {/* Ícono WhatsApp */}
       <div
         style={{
