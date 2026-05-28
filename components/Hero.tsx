@@ -83,12 +83,13 @@ export default function Hero() {
           </div>
 
           {/* ══ MOBILE — imagen compacta ═══════════════════════ */}
-          <div className="lg:hidden w-full relative" style={{ height: "220px" }}>
+          <div className="lg:hidden w-full relative" style={{ height: "340px" }}>
             <Image
               src="/sinfondo.png"
               alt="Grovia"
               fill
-              className="object-contain p-6"
+              className="object-contain"
+              style={{ transform: "scale(1.15)" }}
             />
           </div>
 
