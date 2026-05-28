@@ -67,7 +67,7 @@ export default function SociosSection() {
                     GROVIA
                   </p>
                   <p className="text-[10px] tracking-wide" style={{ color: "var(--text-gray)" }}>
-                    Valentín & Martina
+                    Valentín · Martina · Beatriz
                   </p>
                 </div>
               </div>
@@ -98,6 +98,71 @@ export default function SociosSection() {
               para que cada proyecto tenga la estrategia, la ejecución técnica y los flujos automáticos
               que necesita para dar resultados reales.
             </p>
+
+            {/* Avatares del equipo */}
+            <div className="flex items-center gap-4 flex-wrap">
+
+              {/* Valentín */}
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-sm"
+                  style={{
+                    background: "rgba(232,71,10,0.15)",
+                    border: "1px solid rgba(232,71,10,0.35)",
+                    color: "var(--accent-orange)",
+                  }}
+                >
+                  V
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold leading-none">Valentín</p>
+                  <p className="text-[11px] mt-0.5" style={{ color: "var(--text-gray)" }}>Marketing</p>
+                </div>
+              </div>
+
+              <div className="w-px h-8" style={{ background: "var(--line)" }} />
+
+              {/* Martina */}
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-sm"
+                  style={{
+                    background: "rgba(18,64,170,0.18)",
+                    border: "1px solid rgba(18,64,170,0.40)",
+                    color: "#7EAADC",
+                  }}
+                >
+                  M
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold leading-none">Martina</p>
+                  <p className="text-[11px] mt-0.5" style={{ color: "var(--text-gray)" }}>Desarrollo Web</p>
+                </div>
+              </div>
+
+              <div className="w-px h-8" style={{ background: "var(--line)" }} />
+
+              {/* Beatriz */}
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-11 h-11 rounded-full overflow-hidden shrink-0"
+                  style={{ border: "1px solid rgba(52,211,153,0.40)" }}
+                >
+                  <Image
+                    src="/beatriz.jpeg"
+                    alt="Beatriz"
+                    width={44}
+                    height={44}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold leading-none">Beatriz</p>
+                  <p className="text-[11px] mt-0.5" style={{ color: "#34D399" }}>Automatizaciones</p>
+                </div>
+              </div>
+
+            </div>
 
           </div>
 

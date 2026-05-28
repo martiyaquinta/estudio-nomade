@@ -35,7 +35,7 @@ export default function Hero() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Tu presencia digital que atrae, convence y vende
+              Soluciones digitales que impulsan tu marca
               <span style={{ color: "var(--accent-orange)" }}>.</span>
             </h1>
 
@@ -68,35 +68,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ══ VISUAL DERECHA — Foto ambiente ══════════════════ */}
-          <div className="hidden lg:flex w-full items-center justify-end relative self-stretch" style={{ minHeight: "560px" }}>
-            <div
-              className="relative overflow-hidden"
-              style={{
-                width: "92%",
-                height: "82%",
-                borderRadius: "24px",
-                boxShadow: "0 0 60px rgba(5,10,30,0.8)",
-                opacity: 0.8,
-              }}
-            >
+          {/* ══ VISUAL DERECHA — Logo sin fondo ══════════════════ */}
+          <div className="hidden lg:flex w-full items-center justify-center relative self-stretch" style={{ minHeight: "560px" }}>
+            <div className="relative w-full h-full flex items-center justify-center p-10">
               <Image
-                src="/foto-para-web.png"
-                alt=""
+                src="/logo-grovia.png"
+                alt="Grovia"
                 fill
-                className="object-cover object-center"
-                style={{ filter: "blur(1.5px) saturate(0.85) brightness(0.9)", transform: "scale(1.04)" }}
+                className="object-contain"
                 priority
-              />
-              {/* Degradé lateral izquierdo — fade suave hacia el texto */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(to right, rgba(5,10,30,0.55) 0%, transparent 50%)" }}
-              />
-              {/* Degradé de abajo — cierre suave */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(to top, rgba(5,10,30,0.4) 0%, transparent 50%)" }}
               />
             </div>
           </div>
@@ -104,15 +84,10 @@ export default function Hero() {
           {/* ══ MOBILE — imagen compacta ═══════════════════════ */}
           <div className="lg:hidden w-full relative" style={{ height: "220px" }}>
             <Image
-              src="/foto-para-web.png"
-              alt=""
+              src="/logo-grovia.png"
+              alt="Grovia"
               fill
-              className="object-cover object-center rounded-xl"
-              style={{ filter: "blur(3px) saturate(0.6)", transform: "scale(1.04)" }}
-            />
-            <div
-              className="absolute inset-0 rounded-xl pointer-events-none"
-              style={{ background: "rgba(5,10,30,0.6)" }}
+              className="object-contain p-6"
             />
           </div>
 
