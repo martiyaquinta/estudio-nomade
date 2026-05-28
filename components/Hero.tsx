@@ -68,14 +68,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ══ VISUAL DERECHA — Logo sin fondo ══════════════════ */}
+          {/* ══ VISUAL DERECHA — Imagen sin fondo ══════════════════ */}
           <div className="hidden lg:flex w-full items-center justify-center relative self-stretch" style={{ minHeight: "560px" }}>
-            <div className="relative w-full h-full flex items-center justify-center p-10">
+            <div className="relative w-full h-full">
               <Image
-                src="/logo-grovia.png"
+                src="/sinfondo.png"
                 alt="Grovia"
                 fill
                 className="object-contain"
+                style={{ mixBlendMode: "screen", transform: "scale(1.35)" }}
                 priority
               />
             </div>
@@ -84,7 +85,7 @@ export default function Hero() {
           {/* ══ MOBILE — imagen compacta ═══════════════════════ */}
           <div className="lg:hidden w-full relative" style={{ height: "220px" }}>
             <Image
-              src="/logo-grovia.png"
+              src="/sinfondo.png"
               alt="Grovia"
               fill
               className="object-contain p-6"
