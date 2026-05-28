@@ -31,13 +31,13 @@ export default function AboutUs() {
                 className="text-base leading-relaxed sm:max-w-xs sm:text-right"
                 style={{ color: "var(--text-gray)" }}
               >
-                Somos dos especialistas con habilidades complementarias, bajo una sola marca con un solo objetivo: hacer crecer tu negocio.
+                Somos tres especialistas con habilidades complementarias, bajo una sola marca con un solo objetivo: hacer crecer tu negocio.
               </p>
             </div>
           </div>
 
           {/* Cards del equipo */}
-          <div className="grid md:grid-cols-2 gap-5 mb-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
 
             {/* Valentín — Marketing */}
             <div
@@ -171,6 +171,73 @@ export default function AboutUs() {
                 ))}
               </div>
             </div>
+
+            {/* Beatriz — Automatizaciones */}
+            <div
+              className="p-8 rounded-2xl transition-all duration-300 relative overflow-hidden group"
+              style={{
+                background: "rgba(5, 60, 45, 0.22)",
+                border: "1px solid rgba(52, 211, 153, 0.22)",
+              }}
+            >
+              <div
+                className="absolute top-0 right-0 w-48 h-48 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "radial-gradient(circle at 100% 0%, rgba(52, 211, 153, 0.10) 0%, transparent 70%)",
+                }}
+              />
+
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                  style={{
+                    background: "rgba(52, 211, 153, 0.12)",
+                    border: "1px solid rgba(52, 211, 153, 0.28)",
+                  }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                    <path d="M4 11C4 7.13 7.13 4 11 4C14.87 4 18 7.13 18 11" stroke="#34D399" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M18 11C18 14.87 14.87 18 11 18C7.13 18 4 14.87 4 11" stroke="#34D399" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2"/>
+                    <path d="M11 8V11L13 13" stroke="#34D399" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-white text-xl">Beatriz</h3>
+                  <p className="text-xs font-bold tracking-wider mt-0.5" style={{ color: "#34D399" }}>
+                    AUTOMATIZACIONES
+                  </p>
+                </div>
+              </div>
+
+              <div className="geo-line mb-6" />
+
+              <div className="text-sm leading-[1.85] space-y-4" style={{ color: "var(--text-gray)" }}>
+                <p>
+                  Especialista en automatización de procesos y flujos digitales. Diseña sistemas que trabajan solos para que tu negocio funcione sin fricción, ahorrando tiempo y eliminando tareas repetitivas.
+                </p>
+                <p>
+                  Su enfoque: conectar herramientas, datos y personas de forma inteligente para que cada parte del negocio se mueva sola.
+                </p>
+              </div>
+
+              {/* Especialidades */}
+              <div className="flex flex-wrap gap-2 mt-6">
+                {["Make", "Zapier", "CRM", "Flujos digitales"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] font-bold tracking-wider px-2.5 py-1 rounded"
+                    style={{
+                      background: "rgba(52,211,153,0.08)",
+                      border: "1px solid rgba(52,211,153,0.20)",
+                      color: "#34D399",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Banner Grovia */}
@@ -198,7 +265,7 @@ export default function AboutUs() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                Marketing + desarrollo web,<br />todo en un solo lugar
+                Marketing — Desarrollo web — Automatizaciones<br />todo en un solo lugar
               </h3>
               <p
                 className="text-base max-w-3xl mx-auto leading-[1.85]"
@@ -207,10 +274,14 @@ export default function AboutUs() {
                 No sos un cliente que va de agencia en agencia. Con Grovia tenés{" "}
                 <span className="font-bold" style={{ color: "var(--accent-orange)" }}>
                   estrategia de marketing
-                </span>{" "}
-                y{" "}
+                </span>
+                ,{" "}
                 <span className="font-bold text-white">
                   desarrollo web profesional
+                </span>{" "}
+                y{" "}
+                <span className="font-bold" style={{ color: "#34D399" }}>
+                  automatizaciones inteligentes
                 </span>{" "}
                 en un mismo equipo, con comunicación directa y resultados reales.
               </p>
