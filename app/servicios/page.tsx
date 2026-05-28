@@ -58,27 +58,27 @@ const servicios = [
   },
   {
     nombre: "Automatizaciones",
-    descripcion: "Conectamos tus herramientas y eliminamos tareas repetitivas para que tu negocio funcione solo mientras vos te enfocás en crecer.",
+    descripcion: "Ahorrá tiempo y reducí costos automatizando tareas que hoy consumen horas de trabajo manual.",
     color: "#34D399",
     colorBg: "rgba(52,211,153,0.10)",
     colorBorder: "rgba(52,211,153,0.28)",
     icon: SparklesIcon,
     subservicios: [
       {
-        nombre: "Flujos con Make / Zapier",
-        desc: "Automatizaciones entre apps para eliminar trabajo manual.",
+        nombre: "Procesos automáticos con n8n",
+        desc: "Conectamos tus herramientas para eliminar tareas repetitivas y ahorrar tiempo operativo.",
       },
       {
-        nombre: "CRM y seguimiento",
-        desc: "Gestión automática de leads, clientes y seguimientos.",
+        nombre: "Agentes de IA para atención y ventas",
+        desc: "Automatizamos respuestas, seguimiento de leads y gestión de clientes 24/7.",
       },
       {
-        nombre: "Notificaciones y alertas",
-        desc: "Sistemas de aviso automático por email, WhatsApp o Slack.",
+        nombre: "Integración total de sistemas",
+        desc: "CRM, Google Sheets, formularios, WhatsApp y APIs conectados en un solo flujo eficiente.",
       },
       {
-        nombre: "Integración de herramientas",
-        desc: "Conectamos tu web, formularios, pagos y base de datos en un solo flujo.",
+        nombre: "Más productividad, menos costos",
+        desc: "Optimizamos procesos para que tu negocio pueda crecer sin aumentar carga operativa ni personal.",
       },
     ],
   },
