@@ -41,9 +41,9 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Grovia — Marketing Estratégico & Desarrollo Web",
+  title: "Grovia — Marketing, Desarrollo Web & Automatizaciones",
   description:
-    "Grovia es una agencia de marketing estratégico y desarrollo web. Te ayudamos a crecer online con estrategia clara, diseño profesional y resultados reales.",
+    "Grovia es una agencia de marketing estratégico, desarrollo web y automatizaciones. Te ayudamos a crecer online con estrategia clara, diseño profesional y resultados reales.",
 };
 
 export default function RootLayout({

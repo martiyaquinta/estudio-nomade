@@ -98,7 +98,7 @@ export default function ServiciosPage() {
             <p className="flex items-center justify-center gap-3 mb-6">
               <span className="h-px w-8 flex-shrink-0" style={{ background: "var(--accent-orange)" }} />
               <span className="text-[11px] font-medium tracking-[0.18em] uppercase" style={{ color: "var(--accent-orange)" }}>
-                GROVIA · MARKETING ESTRATÉGICO & DESARROLLO WEB
+                GROVIA · MARKETING · DESARROLLO WEB · AUTOMATIZACIONES
               </span>
               <span className="h-px w-8 flex-shrink-0" style={{ background: "var(--accent-orange)" }} />
             </p>

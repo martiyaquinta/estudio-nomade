@@ -50,7 +50,7 @@ export default function Header() {
               className="text-[9px] font-semibold tracking-[0.14em] uppercase border-l border-white/15 pl-3 leading-tight hidden sm:block"
               style={{ color: "var(--text-gray)" }}
             >
-              Marketing &<br />Desarrollo Web
+              Marketing · Web<br />&amp; Automatizaciones
             </span>
           </Link>
 

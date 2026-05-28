@@ -36,14 +36,14 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)", maxWidth: "220px" }}>
-              Marketing estratégico y desarrollo web para negocios que quieren crecer online.
+              Marketing estratégico, desarrollo web y automatizaciones para negocios que quieren crecer online.
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "var(--text-dim)" }}>
               <span
                 className="inline-block w-1.5 h-1.5 rounded-full"
                 style={{ background: "var(--accent-orange)" }}
               />
-              Valentín · Martina
+              Valentín · Martina · Beatriz
             </div>
           </div>
 
@@ -147,7 +147,7 @@ export default function Footer() {
           style={{ color: "var(--text-dim)" }}
         >
           <span>
-            © {currentYear} Grovia · Marketing Estratégico & Desarrollo Web. Todos los derechos reservados.
+            © {currentYear} Grovia · Marketing · Desarrollo Web · Automatizaciones. Todos los derechos reservados.
           </span>
           <span
             className="font-display font-bold tracking-[0.12em]"

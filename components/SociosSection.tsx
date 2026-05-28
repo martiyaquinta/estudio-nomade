@@ -86,16 +86,16 @@ export default function SociosSection() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Dos especialistas,<br />un solo objetivo
+              Tres especialistas,<br />un solo objetivo
             </h2>
 
             <p
               className="text-base leading-[1.85]"
               style={{ color: "var(--text-muted)", maxWidth: "30rem" }}
             >
-              Somos Valentín y Martina. Juntos combinamos marketing estratégico
-              y desarrollo web bajo una sola marca: Grovia. Trabajamos codo a codo
-              para que cada proyecto tenga tanto la estrategia como la ejecución técnica
+              Somos Valentín, Martina y Beatriz. Combinamos marketing estratégico,
+              desarrollo web y automatizaciones bajo una sola marca: Grovia. Trabajamos codo a codo
+              para que cada proyecto tenga la estrategia, la ejecución técnica y los flujos automáticos
               que necesita para dar resultados reales.
             </p>
 

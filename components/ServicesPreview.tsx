@@ -48,6 +48,21 @@ const services = [
       "Presencia digital profesional. Web 3-5 secciones, SEO básico y formularios.",
     tag: "UI/UX",
   },
+  {
+    number: "04",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M5 14C5 9.03 9.03 5 14 5C18.97 5 23 9.03 23 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M23 14C23 18.97 18.97 23 14 23C9.03 23 5 18.97 5 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="3 2"/>
+        <path d="M14 10V14L17 17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    title: "Automatizaciones",
+    subtitle: "Flujos que trabajan solos",
+    description:
+      "Conectamos tus herramientas y eliminamos tareas repetitivas con Make, Zapier y CRM.",
+    tag: "AUTO",
+  },
 ];
 
 export default function ServicesPreview() {
@@ -87,7 +102,7 @@ export default function ServicesPreview() {
         </div>
 
         {/* Grid de cards — estilo premium */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {services.map((service) => (
             <div
               key={service.number}

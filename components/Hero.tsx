@@ -24,7 +24,7 @@ export default function Hero() {
           <div className="flex flex-col gap-8">
 
             <p className="hero-label section-label">
-              MARKETING ESTRATÉGICO & DESARROLLO WEB
+              MARKETING · DESARROLLO WEB · AUTOMATIZACIONES
             </p>
 
             <h1
@@ -43,7 +43,7 @@ export default function Hero() {
               className="hero-subtitle text-base sm:text-lg leading-[1.75]"
               style={{ color: "var(--text-muted)", maxWidth: "28rem" }}
             >
-              Somos <span style={{ color: "#ffffff", fontWeight: 700, textShadow: "0 0 12px rgba(255,255,255,0.5)" }}>G</span>rovia — marketing estratégico y desarrollo web
+              Somos <span style={{ color: "#ffffff", fontWeight: 700, textShadow: "0 0 12px rgba(255,255,255,0.5)" }}>G</span>rovia — marketing, desarrollo web y automatizaciones
               para que tu negocio crezca y venda online.
             </p>
 
@@ -77,6 +77,7 @@ export default function Hero() {
                 height: "82%",
                 borderRadius: "24px",
                 boxShadow: "0 0 60px rgba(5,10,30,0.8)",
+                opacity: 0.8,
               }}
             >
               <Image
@@ -84,23 +85,18 @@ export default function Hero() {
                 alt=""
                 fill
                 className="object-cover object-center"
-                style={{ filter: "blur(2px) saturate(0.75)", transform: "scale(1.04)" }}
+                style={{ filter: "blur(1.5px) saturate(0.85) brightness(0.9)", transform: "scale(1.04)" }}
                 priority
               />
-              {/* Capa de tinte */}
+              {/* Degradé lateral izquierdo — fade suave hacia el texto */}
               <div
                 className="absolute inset-0 pointer-events-none"
-                style={{ background: "rgba(5,10,30,0.38)" }}
+                style={{ background: "linear-gradient(to right, rgba(5,10,30,0.55) 0%, transparent 50%)" }}
               />
-              {/* Degradé lateral izquierdo */}
+              {/* Degradé de abajo — cierre suave */}
               <div
                 className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(to right, rgba(5,10,30,0.7) 0%, transparent 45%)" }}
-              />
-              {/* Degradé de abajo */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(to top, rgba(5,10,30,0.6) 0%, transparent 55%)" }}
+                style={{ background: "linear-gradient(to top, rgba(5,10,30,0.4) 0%, transparent 50%)" }}
               />
             </div>
           </div>
