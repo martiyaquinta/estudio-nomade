@@ -34,6 +34,14 @@ const proyectos = [
     url: "https://kumelen.vercel.app/",
     descripcion: "Landing page para gimnasio enfocado en running.",
   },
+  {
+    id: 5,
+    nombre: "FE Lashh & Pilar Shine",
+    tipo: "web",
+    año: 2026,
+    url: "https://fe-lassh-pilar-shine.vercel.app/",
+    descripcion: "Web de reserva de turnos para estudio de belleza especializado en lash y brow.",
+  },
 ];
 
 export default function ProyectosPage() {
