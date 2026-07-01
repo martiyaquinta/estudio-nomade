@@ -42,6 +42,14 @@ const proyectos = [
     url: "https://fe-lassh-pilar-shine.vercel.app/",
     descripcion: "Web de reserva de turnos para estudio de belleza especializado en lash y brow.",
   },
+  {
+    id: 6,
+    nombre: "Anastasia",
+    tipo: "e-commerce",
+    año: 2026,
+    url: "https://www.anastasiatiendaerotica.com/",
+    descripcion: "E-commerce de tienda erótica con diseño moderno y experiencia de compra optimizada para mobile.",
+  },
 ];
 
 export default function ProyectosPage() {
